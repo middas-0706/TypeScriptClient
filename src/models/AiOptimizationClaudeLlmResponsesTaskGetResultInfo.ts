@@ -26,6 +26,9 @@ export interface IAiOptimizationClaudeLlmResponsesTaskGetResultInfo   {
         
         /** *array of response items* contains structured AI response data */
         items?: BaseAiOptimizationLlmResponseElementItem[] | undefined
+        
+        /** *array of fan-out queries* contains related search queries derived from the main query to provide a more comprehensive response */
+        fan_out_queries?: string[] | undefined
 
     [key: string]: any;
 
@@ -73,6 +76,11 @@ export class AiOptimizationClaudeLlmResponsesTaskGetResultInfo  implements IAiOp
 
     items?: BaseAiOptimizationLlmResponseElementItem[] | undefined;
 
+    
+    /** *array of fan-out queries* contains related search queries derived from the main query to provide a more comprehensive response */
+
+    fan_out_queries?: string[] | undefined;
+
     [key: string]: any;
 
 
@@ -106,6 +114,7 @@ export class AiOptimizationClaudeLlmResponsesTaskGetResultInfo  implements IAiOp
                     this.items.push(BaseAiOptimizationLlmResponseElementItem.fromJS(item));
                 }
             }
+            this.fan_out_queries = data["fan_out_queries"];
         }
     }
 
@@ -139,6 +148,7 @@ export class AiOptimizationClaudeLlmResponsesTaskGetResultInfo  implements IAiOp
                 }
             }
         }
+        data["fan_out_queries"] = this.fan_out_queries;
         return data;
     }
 }

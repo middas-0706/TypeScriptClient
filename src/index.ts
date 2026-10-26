@@ -167,6 +167,7 @@ export  { AiOverviewExpandedComponent, IAiOverviewExpandedComponent } from "./mo
 export  { SerpApiAiOverviewExpandedElementItem, ISerpApiAiOverviewExpandedElementItem } from "./models/BaseSerpApiAiOverviewElementItem";
 export  { SerpApiAiOverviewVideoElementItem, ISerpApiAiOverviewVideoElementItem } from "./models/BaseSerpApiAiOverviewElementItem";
 export  { SerpApiAiOverviewTableElementItem, ISerpApiAiOverviewTableElementItem } from "./models/BaseSerpApiAiOverviewElementItem";
+export  { SerpApiAiOverviewCodeBlockElementItem, ISerpApiAiOverviewCodeBlockElementItem } from "./models/BaseSerpApiAiOverviewElementItem";
 export  { SerpApiKnowledgeGraphAiOverviewItemElementItem, ISerpApiKnowledgeGraphAiOverviewItemElementItem } from "./models/BaseSerpApiKnowledgeGraphElementItem";
 export  { KnowledgeGraphSerpElementItem, IKnowledgeGraphSerpElementItem } from "./models/BaseSerpApiElementItem";
 export  { AdLinkElement, IAdLinkElement } from "./models/AdLinkElement";
@@ -296,6 +297,7 @@ export  { SerpApiAiModeAiOverviewExpandedElementItem, ISerpApiAiModeAiOverviewEx
 export  { SerpApiAiModeAiOverviewVideoElementItem, ISerpApiAiModeAiOverviewVideoElementItem } from "./models/BaseSerpApiAiModeAiOverviewElementItem";
 export  { AiModeTableInfo, IAiModeTableInfo } from "./models/AiModeTableInfo";
 export  { SerpApiAiModeAiOverviewTableElementItem, ISerpApiAiModeAiOverviewTableElementItem } from "./models/BaseSerpApiAiModeAiOverviewElementItem";
+export  { SerpApiAiModeAiOverviewCodeBlockElementItem, ISerpApiAiModeAiOverviewCodeBlockElementItem } from "./models/BaseSerpApiAiModeAiOverviewElementItem";
 export  { AiModeAiOverviewShoppingElementInfo, IAiModeAiOverviewShoppingElementInfo } from "./models/AiModeAiOverviewShoppingElementInfo";
 export  { SerpApiAiModeAiOverviewShoppingItem, ISerpApiAiModeAiOverviewShoppingItem } from "./models/BaseSerpApiAiModeAiOverviewElementItem";
 export  { AiModeAiOverviewPaidElementInfo, IAiModeAiOverviewPaidElementInfo } from "./models/AiModeAiOverviewPaidElementInfo";
@@ -976,10 +978,9 @@ export  { DataforseoLabsGoogleRankedKeywordsLiveRequestInfo, IDataforseoLabsGoog
 export  { RankChanges, IRankChanges } from "./models/RankChanges";
 export  { BacklinksInfo, IBacklinksInfo } from "./models/BacklinksInfo";
 export  { RankInfo, IRankInfo } from "./models/RankInfo";
-export  { DataLabsOrganicSerpElementItem, IDataLabsOrganicSerpElementItem } from "./models/BaseDataforseoLabsApiElementItem";
+export  { DataLabsPaidSerpElementItem, IDataLabsPaidSerpElementItem } from "./models/BaseDataforseoLabsApiElementItem";
 export  { RankedSerpElement, IRankedSerpElement } from "./models/RankedSerpElement";
 export  { DataforseoLabsGoogleRankedKeywordsLiveItem, IDataforseoLabsGoogleRankedKeywordsLiveItem } from "./models/DataforseoLabsGoogleRankedKeywordsLiveItem";
-export  { DataLabsFeaturedSnippetSerpElementItem, IDataLabsFeaturedSnippetSerpElementItem } from "./models/BaseDataforseoLabsApiElementItem";
 export  { DataforseoLabsGoogleRankedKeywordsLiveResultInfo, IDataforseoLabsGoogleRankedKeywordsLiveResultInfo } from "./models/DataforseoLabsGoogleRankedKeywordsLiveResultInfo";
 export  { DataforseoLabsGoogleRankedKeywordsLiveTaskInfo, IDataforseoLabsGoogleRankedKeywordsLiveTaskInfo } from "./models/DataforseoLabsGoogleRankedKeywordsLiveTaskInfo";
 export  { DataforseoLabsGoogleRankedKeywordsLiveResponseInfo, IDataforseoLabsGoogleRankedKeywordsLiveResponseInfo } from "./models/DataforseoLabsGoogleRankedKeywordsLiveResponseInfo";
@@ -994,9 +995,10 @@ export  { DataforseoLabsGoogleCompetitorsDomainLiveResultInfo, IDataforseoLabsGo
 export  { DataforseoLabsGoogleCompetitorsDomainLiveTaskInfo, IDataforseoLabsGoogleCompetitorsDomainLiveTaskInfo } from "./models/DataforseoLabsGoogleCompetitorsDomainLiveTaskInfo";
 export  { DataforseoLabsGoogleCompetitorsDomainLiveResponseInfo, IDataforseoLabsGoogleCompetitorsDomainLiveResponseInfo } from "./models/DataforseoLabsGoogleCompetitorsDomainLiveResponseInfo";
 export  { DataforseoLabsGoogleDomainIntersectionLiveRequestInfo, IDataforseoLabsGoogleDomainIntersectionLiveRequestInfo } from "./models/DataforseoLabsGoogleDomainIntersectionLiveRequestInfo";
-export  { DataLabsPaidSerpElementItem, IDataLabsPaidSerpElementItem } from "./models/BaseDataforseoLabsApiElementItem";
+export  { DataLabsFeaturedSnippetSerpElementItem, IDataLabsFeaturedSnippetSerpElementItem } from "./models/BaseDataforseoLabsApiElementItem";
 export  { DataforseoLabsGoogleDomainIntersectionLiveItem, IDataforseoLabsGoogleDomainIntersectionLiveItem } from "./models/DataforseoLabsGoogleDomainIntersectionLiveItem";
 export  { DataLabsLocalPackSerpElementItem, IDataLabsLocalPackSerpElementItem } from "./models/BaseDataforseoLabsApiElementItem";
+export  { DataLabsOrganicSerpElementItem, IDataLabsOrganicSerpElementItem } from "./models/BaseDataforseoLabsApiElementItem";
 export  { DataforseoLabsGoogleDomainIntersectionLiveResultInfo, IDataforseoLabsGoogleDomainIntersectionLiveResultInfo } from "./models/DataforseoLabsGoogleDomainIntersectionLiveResultInfo";
 export  { DataforseoLabsGoogleDomainIntersectionLiveTaskInfo, IDataforseoLabsGoogleDomainIntersectionLiveTaskInfo } from "./models/DataforseoLabsGoogleDomainIntersectionLiveTaskInfo";
 export  { DataforseoLabsGoogleDomainIntersectionLiveResponseInfo, IDataforseoLabsGoogleDomainIntersectionLiveResponseInfo } from "./models/DataforseoLabsGoogleDomainIntersectionLiveResponseInfo";
@@ -2595,10 +2597,12 @@ export  { AppendixKeywordsDataDataInfo, IAppendixKeywordsDataDataInfo } from "./
 export  { AppendixAppendixDataInfo, IAppendixAppendixDataInfo } from "./models/AppendixAppendixDataInfo";
 export  { AppendixDataInfo, IAppendixDataInfo } from "./models/AppendixDataInfo";
 export  { AppendixLimitsRatesData, IAppendixLimitsRatesData } from "./models/AppendixLimitsRatesData";
-export  { AppendixStatisticsRatesDataInfo, IAppendixStatisticsRatesDataInfo } from "./models/AppendixStatisticsRatesDataInfo";
-export  { AppendixStatisticsDataInfo, IAppendixStatisticsDataInfo } from "./models/AppendixStatisticsDataInfo";
+export  { AppendixDayStatisticsDataInfo, IAppendixDayStatisticsDataInfo } from "./models/AppendixDayStatisticsDataInfo";
+export  { AppendixMinuteStatisticsRatesData, IAppendixMinuteStatisticsRatesData } from "./models/AppendixMinuteStatisticsRatesData";
+export  { AppendixStatisticsRatesData, IAppendixStatisticsRatesData } from "./models/AppendixStatisticsRatesData";
 export  { AppendixRatesData, IAppendixRatesData } from "./models/AppendixRatesData";
 export  { AppendixLimitsMoneyData, IAppendixLimitsMoneyData } from "./models/AppendixLimitsMoneyData";
+export  { AppendixStatisticsMoneyData, IAppendixStatisticsMoneyData } from "./models/AppendixStatisticsMoneyData";
 export  { AppendixMoneyData, IAppendixMoneyData } from "./models/AppendixMoneyData";
 export  { AppendixPriorityTasksReadyKeywordsDataPriceDataInfo, IAppendixPriorityTasksReadyKeywordsDataPriceDataInfo } from "./models/AppendixPriorityTasksReadyKeywordsDataPriceDataInfo";
 export  { AppendixTaskKeywordsDataPriceDataInfo, IAppendixTaskKeywordsDataPriceDataInfo } from "./models/AppendixTaskKeywordsDataPriceDataInfo";

@@ -9,7 +9,7 @@ export interface IKnowledgeGraphHotelsBookingElement   {
         /** *name of the source of the video* */
         source?: string | undefined
         
-        /** *description of the results element in SERP* */
+        /** *description of the place in SERP* */
         description?: string | undefined
         
         /** *image source URL* */
@@ -41,7 +41,7 @@ export class KnowledgeGraphHotelsBookingElement  implements IKnowledgeGraphHotel
     source?: string | undefined;
 
     
-    /** *description of the results element in SERP* */
+    /** *description of the place in SERP* */
 
     description?: string | undefined;
 

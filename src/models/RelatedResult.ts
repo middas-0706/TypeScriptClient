@@ -36,7 +36,7 @@ export interface IRelatedResult   {
         /** *name of the website in the ad element* */
         website_name?: string | undefined
         
-        /** *indicates whether the element contains an_`image`* **Note:** this check no longer appears in SERP */
+        /** *indicates whether the element contains an `image`* **Note:** this check no longer appears in SERP */
         is_image?: boolean | undefined
         
         /** *indicates whether the element contains a `video`* **Note:** this check no longer appears in SERP */
@@ -132,7 +132,7 @@ export class RelatedResult  implements IRelatedResult {
     website_name?: string | undefined;
 
     
-    /** *indicates whether the element contains an_`image`* **Note:** this check no longer appears in SERP */
+    /** *indicates whether the element contains an `image`* **Note:** this check no longer appears in SERP */
 
     is_image?: boolean | undefined;
 

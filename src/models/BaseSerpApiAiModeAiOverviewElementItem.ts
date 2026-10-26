@@ -87,6 +87,12 @@ export class BaseSerpApiAiModeAiOverviewElementItem  implements IBaseSerpApiAiMo
             result.init(data);
             return result;
         }
+        if (data["type"] === "ai_overview_code_block_element") {
+
+            let result = new SerpApiAiModeAiOverviewCodeBlockElementItem();
+            result.init(data);
+            return result;
+        }
         if (data["type"] === "ai_overview_shopping") {
 
             let result = new SerpApiAiModeAiOverviewShoppingItem();
@@ -505,7 +511,7 @@ export class SerpApiAiModeAiOverviewVideoElementItem  extends BaseSerpApiAiModeA
  
 export interface ISerpApiAiModeAiOverviewTableElementItem  extends IBaseSerpApiAiModeAiOverviewElementItem    {
         
-        /** *text of the component in the markdwon format* */
+        /** *text of the component in the markdown format* */
         markdown?: string | undefined
         
         /** *table present in the element* the header and content of the table present in the element */
@@ -518,7 +524,7 @@ export interface ISerpApiAiModeAiOverviewTableElementItem  extends IBaseSerpApiA
 export class SerpApiAiModeAiOverviewTableElementItem  extends BaseSerpApiAiModeAiOverviewElementItem   implements ISerpApiAiModeAiOverviewTableElementItem {
 
     
-    /** *text of the component in the markdwon format* */
+    /** *text of the component in the markdown format* */
 
     markdown?: string | undefined;
 
@@ -565,6 +571,73 @@ export class SerpApiAiModeAiOverviewTableElementItem  extends BaseSerpApiAiModeA
         
         data["markdown"] = this.markdown;
         data["table"] = this.table ? AiModeTableInfo.fromJS(this.table)?.toJSON() : <any>undefined;
+        return data;
+    }
+}
+
+ 
+export interface ISerpApiAiModeAiOverviewCodeBlockElementItem  extends IBaseSerpApiAiModeAiOverviewElementItem    {
+        
+        /** *programming language or data format of the code block* indicates the syntax the code block is rendered in examples: `json`, `python` */
+        code_type?: string | undefined
+        
+        /** *text description in the element* */
+        text?: string | undefined
+
+    [key: string]: any;
+
+    }
+
+export class SerpApiAiModeAiOverviewCodeBlockElementItem  extends BaseSerpApiAiModeAiOverviewElementItem   implements ISerpApiAiModeAiOverviewCodeBlockElementItem {
+
+    
+    /** *programming language or data format of the code block* indicates the syntax the code block is rendered in examples: `json`, `python` */
+
+    code_type?: string | undefined;
+
+    
+    /** *text description in the element* */
+
+    text?: string | undefined;
+
+    [key: string]: any;
+
+
+    constructor(data?: ISerpApiAiModeAiOverviewCodeBlockElementItem) {
+    super(data);
+
+    }
+
+    init(data?: any) {
+        super.init(data);
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    this[property] = data[property];
+            }
+            this.code_type = data["code_type"];
+            this.text = data["text"];
+        }
+    }
+
+    static fromJS(data: any): SerpApiAiModeAiOverviewCodeBlockElementItem {
+        data = typeof data === 'object' ? data : {};
+
+
+        let result = new SerpApiAiModeAiOverviewCodeBlockElementItem();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+
+         
+        super.toJSON(data);
+        
+        
+        data["code_type"] = this.code_type;
+        data["text"] = this.text;
         return data;
     }
 }
@@ -662,7 +735,7 @@ export class SerpApiAiModeAiOverviewShoppingItem  extends BaseSerpApiAiModeAiOve
  
 export interface ISerpApiAiModeAiOverviewPaidItem  extends IBaseSerpApiAiModeAiOverviewElementItem    {
         
-        /** *introductory text of the element in the response* text preceding the paid ad items */
+        /** *content of the code block* contains the code returned in the AI Mode response */
         text?: string | undefined
         
         /** *content of the element in markdown format* the text of the `ai_overview_paid` formatted in the [markdown markup language](https://en.wikipedia.org/wiki/Markdown) */
@@ -678,7 +751,7 @@ export interface ISerpApiAiModeAiOverviewPaidItem  extends IBaseSerpApiAiModeAiO
 export class SerpApiAiModeAiOverviewPaidItem  extends BaseSerpApiAiModeAiOverviewElementItem   implements ISerpApiAiModeAiOverviewPaidItem {
 
     
-    /** *introductory text of the element in the response* text preceding the paid ad items */
+    /** *content of the code block* contains the code returned in the AI Mode response */
 
     text?: string | undefined;
 

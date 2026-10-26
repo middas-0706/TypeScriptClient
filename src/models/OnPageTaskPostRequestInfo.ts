@@ -24,7 +24,7 @@ export interface IOnPageTaskPostRequestInfo   {
         /** *store HTML of crawled pages* optional field set to `true` if you want to get the HTML of the page using the [OnPage Raw HTML endpoint](/v3/on_page/raw_html/) default value: `false` */
         store_raw_html?: boolean | undefined
         
-        /** *parse content on crawled pages* optional field set to `true` to use the [OnPage Content Parsing endpoint](/v3/on_page/content_parsing/live/) default value: `false` */
+        /** *parse content on crawled pages* optional field set to `true` to use the [OnPage Content Parsing endpoint](/v3/on_page/content_parsing/live/) default value: `false` **Note:** if you use this parameter, additional charges will apply; learn more about the cost of tasks with this parameter [in our help article](https://dataforseo.com/help-center/cost-of-onpage-api-parameters); the cost can be calculated on the [Pricing Page](https://dataforseo.com/pricing/on-page/onpage-api) */
         enable_content_parsing?: boolean | undefined
         
         /** *support cookies on crawled pages* optional field set to `true` to support cookies when crawling the pages default value: `false` */
@@ -81,7 +81,7 @@ export interface IOnPageTaskPostRequestInfo   {
         /** *disable the cookie popup* optional field set to `true` if you want to disable the popup requesting cookie consent from the user; default value: `false` */
         disable_cookie_popup?: boolean | undefined
         
-        /** *custom javascript* optional field **Note** that the execution time for the script you enter here should be 700 ms maximum, for example, you can use the following JS snippet to check if the website contains Google Tag Manager as a `scr` attribute: `let meta = { haveGoogleAnalytics: false, haveTagManager: false };rnfor (var i = 0; i = 0)rn      meta.haveGoogleAnalytics = true;rntif (src.indexOf('gtm.js') >= 0)rn      meta.haveTagManager = true;rn  }rn}rnmeta;`the returned value depends on what you specified in this field. For instance, if you specify the following script: `meta = {}; meta.url = document.URL; meta.test = 'test'; meta;` as a response you will receive the following data: `'custom_js_response': { 'url': 'https://dataforseo.com/', 'test': 'test' }` **Note:** the length of the script you enter must be no more than 2000 characters */
+        /** *custom javascript* optional field **Note:** that the execution time for the script you enter here should be 700 ms maximum, for example, you can use the following JS snippet to check if the website contains Google Tag Manager as a `scr` attribute: `let meta = { haveGoogleAnalytics: false, haveTagManager: false };rnfor (var i = 0; i = 0)rn      meta.haveGoogleAnalytics = true;rntif (src.indexOf('gtm.js') >= 0)rn      meta.haveTagManager = true;rn  }rn}rnmeta;`the returned value depends on what you specified in this field. For instance, if you specify the following script: `meta = {}; meta.url = document.URL; meta.test = 'test'; meta;` as a response you will receive the following data: `'custom_js_response': { 'url': 'https://dataforseo.com/', 'test': 'test' }` **Note #2:** the length of the script you enter must be no more than 2000 characters **Note #3:** the serialized script response must be no more than 100000 characters. If it exceeds this limit, both `custom_js_response` and `custom_js_client_exception` will contain the following message: `your response was truncated because greater than 100000 symbols` */
         custom_js?: string | undefined
         
         /** *enable microdata validation* optional field set to `true` if you want to use the [OnPage API Microdata endpoint](/v3/on_page/microdata/) default value: `false` */
@@ -176,7 +176,7 @@ export class OnPageTaskPostRequestInfo  implements IOnPageTaskPostRequestInfo {
     store_raw_html?: boolean | undefined;
 
     
-    /** *parse content on crawled pages* optional field set to `true` to use the [OnPage Content Parsing endpoint](/v3/on_page/content_parsing/live/) default value: `false` */
+    /** *parse content on crawled pages* optional field set to `true` to use the [OnPage Content Parsing endpoint](/v3/on_page/content_parsing/live/) default value: `false` **Note:** if you use this parameter, additional charges will apply; learn more about the cost of tasks with this parameter [in our help article](https://dataforseo.com/help-center/cost-of-onpage-api-parameters); the cost can be calculated on the [Pricing Page](https://dataforseo.com/pricing/on-page/onpage-api) */
 
     enable_content_parsing?: boolean | undefined;
 
@@ -271,7 +271,7 @@ export class OnPageTaskPostRequestInfo  implements IOnPageTaskPostRequestInfo {
     disable_cookie_popup?: boolean | undefined;
 
     
-    /** *custom javascript* optional field **Note** that the execution time for the script you enter here should be 700 ms maximum, for example, you can use the following JS snippet to check if the website contains Google Tag Manager as a `scr` attribute: `let meta = { haveGoogleAnalytics: false, haveTagManager: false };rnfor (var i = 0; i = 0)rn      meta.haveGoogleAnalytics = true;rntif (src.indexOf('gtm.js') >= 0)rn      meta.haveTagManager = true;rn  }rn}rnmeta;`the returned value depends on what you specified in this field. For instance, if you specify the following script: `meta = {}; meta.url = document.URL; meta.test = 'test'; meta;` as a response you will receive the following data: `'custom_js_response': { 'url': 'https://dataforseo.com/', 'test': 'test' }` **Note:** the length of the script you enter must be no more than 2000 characters */
+    /** *custom javascript* optional field **Note:** that the execution time for the script you enter here should be 700 ms maximum, for example, you can use the following JS snippet to check if the website contains Google Tag Manager as a `scr` attribute: `let meta = { haveGoogleAnalytics: false, haveTagManager: false };rnfor (var i = 0; i = 0)rn      meta.haveGoogleAnalytics = true;rntif (src.indexOf('gtm.js') >= 0)rn      meta.haveTagManager = true;rn  }rn}rnmeta;`the returned value depends on what you specified in this field. For instance, if you specify the following script: `meta = {}; meta.url = document.URL; meta.test = 'test'; meta;` as a response you will receive the following data: `'custom_js_response': { 'url': 'https://dataforseo.com/', 'test': 'test' }` **Note #2:** the length of the script you enter must be no more than 2000 characters **Note #3:** the serialized script response must be no more than 100000 characters. If it exceeds this limit, both `custom_js_response` and `custom_js_client_exception` will contain the following message: `your response was truncated because greater than 100000 symbols` */
 
     custom_js?: string | undefined;
 

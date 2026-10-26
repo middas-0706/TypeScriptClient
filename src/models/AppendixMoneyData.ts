@@ -1,5 +1,5 @@
 import { AppendixLimitsMoneyData, IAppendixLimitsMoneyData } from "./AppendixLimitsMoneyData";
-import { AppendixStatisticsDataInfo, IAppendixStatisticsDataInfo } from "./AppendixStatisticsDataInfo";
+import { AppendixStatisticsMoneyData, IAppendixStatisticsMoneyData } from "./AppendixStatisticsMoneyData";
 
 
 export interface IAppendixMoneyData   {
@@ -14,7 +14,7 @@ export interface IAppendixMoneyData   {
         limits?: AppendixLimitsMoneyData | undefined
         
         /** *statistics of your spending* */
-        statistics?: AppendixStatisticsDataInfo | undefined
+        statistics?: AppendixStatisticsMoneyData | undefined
 
     [key: string]: any;
 
@@ -40,7 +40,7 @@ export class AppendixMoneyData  implements IAppendixMoneyData {
     
     /** *statistics of your spending* */
 
-    statistics?: AppendixStatisticsDataInfo | undefined;
+    statistics?: AppendixStatisticsMoneyData | undefined;
 
     [key: string]: any;
 
@@ -65,7 +65,7 @@ export class AppendixMoneyData  implements IAppendixMoneyData {
             this.total = data["total"];
             this.balance = data["balance"];
             this.limits = data["limits"] ? AppendixLimitsMoneyData.fromJS(data["limits"]) : <any>undefined;
-            this.statistics = data["statistics"] ? AppendixStatisticsDataInfo.fromJS(data["statistics"]) : <any>undefined;
+            this.statistics = data["statistics"] ? AppendixStatisticsMoneyData.fromJS(data["statistics"]) : <any>undefined;
         }
     }
 
@@ -86,7 +86,7 @@ export class AppendixMoneyData  implements IAppendixMoneyData {
         data["total"] = this.total;
         data["balance"] = this.balance;
         data["limits"] = this.limits ? AppendixLimitsMoneyData.fromJS(this.limits)?.toJSON() : <any>undefined;
-        data["statistics"] = this.statistics ? AppendixStatisticsDataInfo.fromJS(this.statistics)?.toJSON() : <any>undefined;
+        data["statistics"] = this.statistics ? AppendixStatisticsMoneyData.fromJS(this.statistics)?.toJSON() : <any>undefined;
         return data;
     }
 }

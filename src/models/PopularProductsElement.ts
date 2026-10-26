@@ -26,6 +26,12 @@ export interface IPopularProductsElement   {
         /** *seller of the product* */
         seller?: string | undefined
         
+        /** *title of the hotel listing's group* */
+        group_title?: string | undefined
+        
+        /** *domain or brand name of the hotel listing's group* */
+        group_source?: string | undefined
+        
         /** *URL of the image* the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) */
         image_url?: string | undefined
         
@@ -80,6 +86,16 @@ export class PopularProductsElement  implements IPopularProductsElement {
     seller?: string | undefined;
 
     
+    /** *title of the hotel listing's group* */
+
+    group_title?: string | undefined;
+
+    
+    /** *domain or brand name of the hotel listing's group* */
+
+    group_source?: string | undefined;
+
+    
     /** *URL of the image* the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) */
 
     image_url?: string | undefined;
@@ -126,6 +142,8 @@ export class PopularProductsElement  implements IPopularProductsElement {
             this.description = data["description"];
             this.more_sellers = data["more_sellers"];
             this.seller = data["seller"];
+            this.group_title = data["group_title"];
+            this.group_source = data["group_source"];
             this.image_url = data["image_url"];
             this.price = data["price"] ? PriceInfo.fromJS(data["price"]) : <any>undefined;
             this.rating = data["rating"] ? RatingInfo.fromJS(data["rating"]) : <any>undefined;
@@ -154,6 +172,8 @@ export class PopularProductsElement  implements IPopularProductsElement {
         data["description"] = this.description;
         data["more_sellers"] = this.more_sellers;
         data["seller"] = this.seller;
+        data["group_title"] = this.group_title;
+        data["group_source"] = this.group_source;
         data["image_url"] = this.image_url;
         data["price"] = this.price ? PriceInfo.fromJS(this.price)?.toJSON() : <any>undefined;
         data["rating"] = this.rating ? RatingInfo.fromJS(this.rating)?.toJSON() : <any>undefined;

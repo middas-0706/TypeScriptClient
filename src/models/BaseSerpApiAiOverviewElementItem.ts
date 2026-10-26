@@ -85,6 +85,12 @@ export class BaseSerpApiAiOverviewElementItem  implements IBaseSerpApiAiOverview
             result.init(data);
             return result;
         }
+        if (data["type"] === "ai_overview_code_block_element") {
+
+            let result = new SerpApiAiOverviewCodeBlockElementItem();
+            result.init(data);
+            return result;
+        }
 
         let result = new BaseSerpApiAiOverviewElementItem();
         result.init(data);
@@ -551,6 +557,69 @@ export class SerpApiAiOverviewTableElementItem  extends BaseSerpApiAiOverviewEle
         
         data["markdown"] = this.markdown;
         data["table"] = this.table ? Table.fromJS(this.table)?.toJSON() : <any>undefined;
+        return data;
+    }
+}
+
+ 
+export interface ISerpApiAiOverviewCodeBlockElementItem  extends IBaseSerpApiAiOverviewElementItem    {
+        
+        code_type?: string | undefined
+        
+        /** *additional text of the element in SERP* */
+        text?: string | undefined
+
+    [key: string]: any;
+
+    }
+
+export class SerpApiAiOverviewCodeBlockElementItem  extends BaseSerpApiAiOverviewElementItem   implements ISerpApiAiOverviewCodeBlockElementItem {
+
+    code_type?: string | undefined;
+
+    
+    /** *additional text of the element in SERP* */
+
+    text?: string | undefined;
+
+    [key: string]: any;
+
+
+    constructor(data?: ISerpApiAiOverviewCodeBlockElementItem) {
+    super(data);
+
+    }
+
+    init(data?: any) {
+        super.init(data);
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    this[property] = data[property];
+            }
+            this.code_type = data["code_type"];
+            this.text = data["text"];
+        }
+    }
+
+    static fromJS(data: any): SerpApiAiOverviewCodeBlockElementItem {
+        data = typeof data === 'object' ? data : {};
+
+
+        let result = new SerpApiAiOverviewCodeBlockElementItem();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+
+         
+        super.toJSON(data);
+        
+        
+        data["code_type"] = this.code_type;
+        data["text"] = this.text;
         return data;
     }
 }

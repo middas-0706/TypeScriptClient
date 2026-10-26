@@ -102,6 +102,7 @@ export interface ISerpApiProductConsiderationsExpandedElementItem  extends IBase
         /** *date and time when the result was published* in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: `2019-11-15 12:57:46 +00:00` */
         timestamp?: string | undefined
         
+        /** ((‘related_searches’ element in SERP|https://dataforseo.com/wp-content/uploads/2020/02/window-feature-related-searches.png)) */
         related_searches?: string[] | undefined
         
         /** @deprecated *contains information from the 'About this result' panel* **Note:** this object is deprecated and always returns null */
@@ -147,6 +148,9 @@ export class SerpApiProductConsiderationsExpandedElementItem  extends BaseSerpAp
     /** *date and time when the result was published* in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: `2019-11-15 12:57:46 +00:00` */
 
     timestamp?: string | undefined;
+
+    
+    /** ((‘related_searches’ element in SERP|https://dataforseo.com/wp-content/uploads/2020/02/window-feature-related-searches.png)) */
 
     related_searches?: string[] | undefined;
     

@@ -8,10 +8,10 @@ export interface IBaseGeminiLlmScraperElementItem   {
         /** type of element */
         type?: string | undefined
         
-        /** *group rank in SERP* position within a group of elements with identical `type` values positions of elements with different `type` values are omitted from `rank_group` */
+        /** *group rank in Gemini result* position within a group of elements with identical `type` values positions of elements with different `type` values are omitted from `rank_group` */
         rank_group?: number | undefined
         
-        /** *absolute rank in SERP* absolute position among all the elements in SERP */
+        /** *absolute rank in a Gemini result* absolute position among all the elements in a Gemini result */
         rank_absolute?: number | undefined
         
         /** *content of the element in markdown format* content of the result formatted in the [markdown markup language](https://en.wikipedia.org/wiki/Markdown) */
@@ -29,12 +29,12 @@ export class BaseGeminiLlmScraperElementItem  implements IBaseGeminiLlmScraperEl
     type?: string | undefined;
 
     
-    /** *group rank in SERP* position within a group of elements with identical `type` values positions of elements with different `type` values are omitted from `rank_group` */
+    /** *group rank in Gemini result* position within a group of elements with identical `type` values positions of elements with different `type` values are omitted from `rank_group` */
 
     rank_group?: number | undefined;
 
     
-    /** *absolute rank in SERP* absolute position among all the elements in SERP */
+    /** *absolute rank in a Gemini result* absolute position among all the elements in a Gemini result */
 
     rank_absolute?: number | undefined;
 
@@ -264,7 +264,7 @@ export class GeminiTableElementItem  extends BaseGeminiLlmScraperElementItem   i
  
 export interface IGeminiImagesElementItem  extends IBaseGeminiLlmScraperElementItem    {
         
-        /** *elements of Gemini results* */
+        /** *elements of a Gemini result* */
         items?: GeminiImagesElement[] | undefined
 
     [key: string]: any;
@@ -274,7 +274,7 @@ export interface IGeminiImagesElementItem  extends IBaseGeminiLlmScraperElementI
 export class GeminiImagesElementItem  extends BaseGeminiLlmScraperElementItem   implements IGeminiImagesElementItem {
 
     
-    /** *elements of Gemini results* */
+    /** *elements of a Gemini result* */
 
     items?: GeminiImagesElement[] | undefined;
 

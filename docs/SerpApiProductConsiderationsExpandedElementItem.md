@@ -11,5 +11,5 @@
 **domain** | **string** | *source domain* |[optional]|
 **url** | **string** | *relevant URL* |[optional]|
 **timestamp** | **string** | *date and time when the result was published*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00` |[optional]|
-**related_searches** | **string[]** |  |[optional]|
+**related_searches** | **string[]** | ((‘related_searches’ element in SERP|https://dataforseo.com/wp-content/uploads/2020/02/window-feature-related-searches.png)) |[optional]|
 **about_this_result** | **AboutThisResultElement** | *contains information from the 'About this result' panel*. **Note:** this object is deprecated and always returns null |[optional]|

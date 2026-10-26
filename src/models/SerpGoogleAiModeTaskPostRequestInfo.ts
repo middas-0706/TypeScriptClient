@@ -27,7 +27,7 @@ export interface ISerpGoogleAiModeTaskPostRequestInfo   {
         /** *full name of search engine location* **required field if you don't specify** `location_code` or `location_coordinate` **if you use this field, you don't need to specify `location_code` or `location_coordinate`** you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/locations` **Note:** check [Google Search Help](https://support.google.com/websearch/answer/16011537?hl=en&co=GENIE.Platform%3DAndroid#) for the list of countries where AI Mode is currently available */
         location_name?: string | undefined
         
-        /** *full name of search engine language* required field if you don't specify `language_code`; if you use this field, you don't need to specify `language_code`; you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/ai_mode/languages`; */
+        /** *full name of search engine language* required field if you don't specify `language_code`; if you use this field, you don't need to specify `language_code`; you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/ai_mode/languages` */
         language_name?: string | undefined
         
         /** *device operating system* optional field if you specify `desktop` in the `device` field, choose from the following values: `windows`, `macos` default value: `windows` if you specify `mobile` in the `device` field, choose from the following values: `android`, `ios` default value: `android` */
@@ -103,7 +103,7 @@ export class SerpGoogleAiModeTaskPostRequestInfo  implements ISerpGoogleAiModeTa
     location_name?: string | undefined;
 
     
-    /** *full name of search engine language* required field if you don't specify `language_code`; if you use this field, you don't need to specify `language_code`; you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/ai_mode/languages`; */
+    /** *full name of search engine language* required field if you don't specify `language_code`; if you use this field, you don't need to specify `language_code`; you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/ai_mode/languages` */
 
     language_name?: string | undefined;
 

@@ -12,10 +12,10 @@ export interface IBaseChatGptLlmScraperElementItem   {
         /** type of element */
         type?: string | undefined
         
-        /** *group rank in SERP* position within a group of elements with identical `type` values positions of elements with different `type` values are omitted from `rank_group` */
+        /** *group rank in a ChatGPT result* position within a group of elements with identical `type` values positions of elements with different `type` values are omitted from `rank_group` */
         rank_group?: number | undefined
         
-        /** *absolute rank in SERP* absolute position among all the elements */
+        /** *absolute rank in a ChatGPT result* absolute position among all the elements */
         rank_absolute?: number | undefined
 
     [key: string]: any;
@@ -30,12 +30,12 @@ export class BaseChatGptLlmScraperElementItem  implements IBaseChatGptLlmScraper
     type?: string | undefined;
 
     
-    /** *group rank in SERP* position within a group of elements with identical `type` values positions of elements with different `type` values are omitted from `rank_group` */
+    /** *group rank in a ChatGPT result* position within a group of elements with identical `type` values positions of elements with different `type` values are omitted from `rank_group` */
 
     rank_group?: number | undefined;
 
     
-    /** *absolute rank in SERP* absolute position among all the elements */
+    /** *absolute rank in a ChatGPT result* absolute position among all the elements */
 
     rank_absolute?: number | undefined;
 

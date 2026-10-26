@@ -30,6 +30,12 @@ export interface IHotelsPackElement   {
         
         /** *the item's rating* the popularity rate based on reviews and displayed in SERP; if there is none, equals `null` */
         rating?: RatingInfo | undefined
+        
+        /** *title of the hotel listing's group* */
+        group_title?: string | undefined
+        
+        /** *domain or brand name of the hotel listing's group* */
+        group_source?: string | undefined
 
     [key: string]: any;
 
@@ -82,6 +88,16 @@ export class HotelsPackElement  implements IHotelsPackElement {
 
     rating?: RatingInfo | undefined;
 
+    
+    /** *title of the hotel listing's group* */
+
+    group_title?: string | undefined;
+
+    
+    /** *domain or brand name of the hotel listing's group* */
+
+    group_source?: string | undefined;
+
     [key: string]: any;
 
 
@@ -111,6 +127,8 @@ export class HotelsPackElement  implements IHotelsPackElement {
             this.url = data["url"];
             this.is_paid = data["is_paid"];
             this.rating = data["rating"] ? RatingInfo.fromJS(data["rating"]) : <any>undefined;
+            this.group_title = data["group_title"];
+            this.group_source = data["group_source"];
         }
     }
 
@@ -137,6 +155,8 @@ export class HotelsPackElement  implements IHotelsPackElement {
         data["url"] = this.url;
         data["is_paid"] = this.is_paid;
         data["rating"] = this.rating ? RatingInfo.fromJS(this.rating)?.toJSON() : <any>undefined;
+        data["group_title"] = this.group_title;
+        data["group_source"] = this.group_source;
         return data;
     }
 }

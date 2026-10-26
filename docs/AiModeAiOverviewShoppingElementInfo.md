@@ -18,3 +18,5 @@
 **marketplace** | **string** | *merchant account provider*. e-commerce site that hosts products or websites of individual sellers under the same merchant account. example:. `by Google` |[optional]|
 **marketplace_url** | **string** | *URL to the merchant account provider*. e-commerce site that hosts products or websites of individual sellers under the same merchant account |[optional]|
 **image_url** | **string** | *URL of the image*. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) |[optional]|
+**text** | **string** | *introductory text of the element in the response*. text preceding the paid ad items |[optional]|
+**markdown** | **string** | *content of the element in the markdown format* |[optional]|

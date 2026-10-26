@@ -155,6 +155,7 @@ export  { AiOverviewExpandedComponent, IAiOverviewExpandedComponent } from "./Ai
 export  { SerpApiAiOverviewExpandedElementItem, ISerpApiAiOverviewExpandedElementItem } from "./BaseSerpApiAiOverviewElementItem";
 export  { SerpApiAiOverviewVideoElementItem, ISerpApiAiOverviewVideoElementItem } from "./BaseSerpApiAiOverviewElementItem";
 export  { SerpApiAiOverviewTableElementItem, ISerpApiAiOverviewTableElementItem } from "./BaseSerpApiAiOverviewElementItem";
+export  { SerpApiAiOverviewCodeBlockElementItem, ISerpApiAiOverviewCodeBlockElementItem } from "./BaseSerpApiAiOverviewElementItem";
 export  { SerpApiKnowledgeGraphAiOverviewItemElementItem, ISerpApiKnowledgeGraphAiOverviewItemElementItem } from "./BaseSerpApiKnowledgeGraphElementItem";
 export  { KnowledgeGraphSerpElementItem, IKnowledgeGraphSerpElementItem } from "./BaseSerpApiElementItem";
 export  { AdLinkElement, IAdLinkElement } from "./AdLinkElement";
@@ -284,6 +285,7 @@ export  { SerpApiAiModeAiOverviewExpandedElementItem, ISerpApiAiModeAiOverviewEx
 export  { SerpApiAiModeAiOverviewVideoElementItem, ISerpApiAiModeAiOverviewVideoElementItem } from "./BaseSerpApiAiModeAiOverviewElementItem";
 export  { AiModeTableInfo, IAiModeTableInfo } from "./AiModeTableInfo";
 export  { SerpApiAiModeAiOverviewTableElementItem, ISerpApiAiModeAiOverviewTableElementItem } from "./BaseSerpApiAiModeAiOverviewElementItem";
+export  { SerpApiAiModeAiOverviewCodeBlockElementItem, ISerpApiAiModeAiOverviewCodeBlockElementItem } from "./BaseSerpApiAiModeAiOverviewElementItem";
 export  { AiModeAiOverviewShoppingElementInfo, IAiModeAiOverviewShoppingElementInfo } from "./AiModeAiOverviewShoppingElementInfo";
 export  { SerpApiAiModeAiOverviewShoppingItem, ISerpApiAiModeAiOverviewShoppingItem } from "./BaseSerpApiAiModeAiOverviewElementItem";
 export  { AiModeAiOverviewPaidElementInfo, IAiModeAiOverviewPaidElementInfo } from "./AiModeAiOverviewPaidElementInfo";
@@ -964,10 +966,9 @@ export  { DataforseoLabsGoogleRankedKeywordsLiveRequestInfo, IDataforseoLabsGoog
 export  { RankChanges, IRankChanges } from "./RankChanges";
 export  { BacklinksInfo, IBacklinksInfo } from "./BacklinksInfo";
 export  { RankInfo, IRankInfo } from "./RankInfo";
-export  { DataLabsOrganicSerpElementItem, IDataLabsOrganicSerpElementItem } from "./BaseDataforseoLabsApiElementItem";
+export  { DataLabsPaidSerpElementItem, IDataLabsPaidSerpElementItem } from "./BaseDataforseoLabsApiElementItem";
 export  { RankedSerpElement, IRankedSerpElement } from "./RankedSerpElement";
 export  { DataforseoLabsGoogleRankedKeywordsLiveItem, IDataforseoLabsGoogleRankedKeywordsLiveItem } from "./DataforseoLabsGoogleRankedKeywordsLiveItem";
-export  { DataLabsFeaturedSnippetSerpElementItem, IDataLabsFeaturedSnippetSerpElementItem } from "./BaseDataforseoLabsApiElementItem";
 export  { DataforseoLabsGoogleRankedKeywordsLiveResultInfo, IDataforseoLabsGoogleRankedKeywordsLiveResultInfo } from "./DataforseoLabsGoogleRankedKeywordsLiveResultInfo";
 export  { DataforseoLabsGoogleRankedKeywordsLiveTaskInfo, IDataforseoLabsGoogleRankedKeywordsLiveTaskInfo } from "./DataforseoLabsGoogleRankedKeywordsLiveTaskInfo";
 export  { DataforseoLabsGoogleRankedKeywordsLiveResponseInfo, IDataforseoLabsGoogleRankedKeywordsLiveResponseInfo } from "./DataforseoLabsGoogleRankedKeywordsLiveResponseInfo";
@@ -982,9 +983,10 @@ export  { DataforseoLabsGoogleCompetitorsDomainLiveResultInfo, IDataforseoLabsGo
 export  { DataforseoLabsGoogleCompetitorsDomainLiveTaskInfo, IDataforseoLabsGoogleCompetitorsDomainLiveTaskInfo } from "./DataforseoLabsGoogleCompetitorsDomainLiveTaskInfo";
 export  { DataforseoLabsGoogleCompetitorsDomainLiveResponseInfo, IDataforseoLabsGoogleCompetitorsDomainLiveResponseInfo } from "./DataforseoLabsGoogleCompetitorsDomainLiveResponseInfo";
 export  { DataforseoLabsGoogleDomainIntersectionLiveRequestInfo, IDataforseoLabsGoogleDomainIntersectionLiveRequestInfo } from "./DataforseoLabsGoogleDomainIntersectionLiveRequestInfo";
-export  { DataLabsPaidSerpElementItem, IDataLabsPaidSerpElementItem } from "./BaseDataforseoLabsApiElementItem";
+export  { DataLabsFeaturedSnippetSerpElementItem, IDataLabsFeaturedSnippetSerpElementItem } from "./BaseDataforseoLabsApiElementItem";
 export  { DataforseoLabsGoogleDomainIntersectionLiveItem, IDataforseoLabsGoogleDomainIntersectionLiveItem } from "./DataforseoLabsGoogleDomainIntersectionLiveItem";
 export  { DataLabsLocalPackSerpElementItem, IDataLabsLocalPackSerpElementItem } from "./BaseDataforseoLabsApiElementItem";
+export  { DataLabsOrganicSerpElementItem, IDataLabsOrganicSerpElementItem } from "./BaseDataforseoLabsApiElementItem";
 export  { DataforseoLabsGoogleDomainIntersectionLiveResultInfo, IDataforseoLabsGoogleDomainIntersectionLiveResultInfo } from "./DataforseoLabsGoogleDomainIntersectionLiveResultInfo";
 export  { DataforseoLabsGoogleDomainIntersectionLiveTaskInfo, IDataforseoLabsGoogleDomainIntersectionLiveTaskInfo } from "./DataforseoLabsGoogleDomainIntersectionLiveTaskInfo";
 export  { DataforseoLabsGoogleDomainIntersectionLiveResponseInfo, IDataforseoLabsGoogleDomainIntersectionLiveResponseInfo } from "./DataforseoLabsGoogleDomainIntersectionLiveResponseInfo";
@@ -2583,10 +2585,12 @@ export  { AppendixKeywordsDataDataInfo, IAppendixKeywordsDataDataInfo } from "./
 export  { AppendixAppendixDataInfo, IAppendixAppendixDataInfo } from "./AppendixAppendixDataInfo";
 export  { AppendixDataInfo, IAppendixDataInfo } from "./AppendixDataInfo";
 export  { AppendixLimitsRatesData, IAppendixLimitsRatesData } from "./AppendixLimitsRatesData";
-export  { AppendixStatisticsRatesDataInfo, IAppendixStatisticsRatesDataInfo } from "./AppendixStatisticsRatesDataInfo";
-export  { AppendixStatisticsDataInfo, IAppendixStatisticsDataInfo } from "./AppendixStatisticsDataInfo";
+export  { AppendixDayStatisticsDataInfo, IAppendixDayStatisticsDataInfo } from "./AppendixDayStatisticsDataInfo";
+export  { AppendixMinuteStatisticsRatesData, IAppendixMinuteStatisticsRatesData } from "./AppendixMinuteStatisticsRatesData";
+export  { AppendixStatisticsRatesData, IAppendixStatisticsRatesData } from "./AppendixStatisticsRatesData";
 export  { AppendixRatesData, IAppendixRatesData } from "./AppendixRatesData";
 export  { AppendixLimitsMoneyData, IAppendixLimitsMoneyData } from "./AppendixLimitsMoneyData";
+export  { AppendixStatisticsMoneyData, IAppendixStatisticsMoneyData } from "./AppendixStatisticsMoneyData";
 export  { AppendixMoneyData, IAppendixMoneyData } from "./AppendixMoneyData";
 export  { AppendixPriorityTasksReadyKeywordsDataPriceDataInfo, IAppendixPriorityTasksReadyKeywordsDataPriceDataInfo } from "./AppendixPriorityTasksReadyKeywordsDataPriceDataInfo";
 export  { AppendixTaskKeywordsDataPriceDataInfo, IAppendixTaskKeywordsDataPriceDataInfo } from "./AppendixTaskKeywordsDataPriceDataInfo";

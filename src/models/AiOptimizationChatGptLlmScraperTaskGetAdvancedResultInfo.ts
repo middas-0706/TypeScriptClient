@@ -21,7 +21,7 @@ export interface IAiOptimizationChatGptLlmScraperTaskGetAdvancedResultInfo   {
         /** *direct URL to search engine results*you can use it to make sure that we provided exact results */
         check_url?: string | undefined
         
-        /** *date and time when the result was received* in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: `2019-11-15 12:57:46 +00:00` */
+        /** *date and time when the result was received* in the UTC format: “yyyy-mm-dd hh:mm:ss +hh:mm” example: `2019-11-15 12:57:46 +00:00` */
         datetime?: string | undefined
         
         /** *content of the element in markdown format* content of the result formatted in the [markdown markup language](https://en.wikipedia.org/wiki/Markdown) */
@@ -42,7 +42,7 @@ export interface IAiOptimizationChatGptLlmScraperTaskGetAdvancedResultInfo   {
         /** *total number of results* */
         se_results_count?: number | undefined
         
-        /** *types of search results* contains types of search results (`items`) found. possible item types: `chat_gpt_text`, `chat_gpt_table`, `chat_gpt_navigation_list`, `chat_gpt_images`, `chat_gpt_local_businesses`, `chat_gpt_products` */
+        /** *types of result items* contains types of result `items` found in a ChatGPT result. possible item types: `chat_gpt_text`, `chat_gpt_table`, `chat_gpt_navigation_list`, `chat_gpt_images`, `chat_gpt_local_businesses`, `chat_gpt_products`, `chat_gpt_ad` */
         item_types?: string[] | undefined
         
         /** *the number of results returned in the **`items`** array* */
@@ -83,7 +83,7 @@ export class AiOptimizationChatGptLlmScraperTaskGetAdvancedResultInfo  implement
     check_url?: string | undefined;
 
     
-    /** *date and time when the result was received* in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: `2019-11-15 12:57:46 +00:00` */
+    /** *date and time when the result was received* in the UTC format: “yyyy-mm-dd hh:mm:ss +hh:mm” example: `2019-11-15 12:57:46 +00:00` */
 
     datetime?: string | undefined;
 
@@ -118,7 +118,7 @@ export class AiOptimizationChatGptLlmScraperTaskGetAdvancedResultInfo  implement
     se_results_count?: number | undefined;
 
     
-    /** *types of search results* contains types of search results (`items`) found. possible item types: `chat_gpt_text`, `chat_gpt_table`, `chat_gpt_navigation_list`, `chat_gpt_images`, `chat_gpt_local_businesses`, `chat_gpt_products` */
+    /** *types of result items* contains types of result `items` found in a ChatGPT result. possible item types: `chat_gpt_text`, `chat_gpt_table`, `chat_gpt_navigation_list`, `chat_gpt_images`, `chat_gpt_local_businesses`, `chat_gpt_products`, `chat_gpt_ad` */
 
     item_types?: string[] | undefined;
 

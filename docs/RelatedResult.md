@@ -14,7 +14,7 @@
 **related_search_url** | **string** | *URL to a similar search*. URL to a new search for the same keyword(s) [on related sites](https://support.google.com/websearch/answer/2466433?hl=en#:~:text=Search%20for%20related%20sites) |[optional]|
 **breadcrumb** | **string** | *breadcrumb in SERP* |[optional]|
 **website_name** | **string** | *name of the website in the ad element* |[optional]|
-**is_image** | **boolean** | *indicates whether the element contains an_`image`*. **Note:** this check no longer appears in SERP |[optional]|
+**is_image** | **boolean** | *indicates whether the element contains an `image`*. **Note:** this check no longer appears in SERP |[optional]|
 **is_video** | **boolean** | *indicates whether the element contains a `video`*. **Note:** this check no longer appears in SERP |[optional]|
 **checks** | **string[]** | *array of properties detected for the SERP element*. lists the properties that are true for this element. each value in the array represents a detected property . example:. if `is_image` is present in the array, the element contains an image. possible values in the array:. `is_image`, `is_video`, `is_featured_snippet`, `amp_version`, `is_malicious`, `is_web_story`, `is_highly_cited`. equals `null` if none of the properties are detected for the element. learn more about the `checks` array in [this Help Center article](https://dataforseo.com/help-center/whats-a-checks-array-in-the-google-organic-serp-api) |[optional]|
 **description** | **string** | *description of the results element in SERP* |[optional]|

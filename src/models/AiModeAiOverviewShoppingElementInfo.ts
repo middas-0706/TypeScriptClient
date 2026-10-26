@@ -45,6 +45,12 @@ export interface IAiModeAiOverviewShoppingElementInfo   {
         
         /** *URL of the image* the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) */
         image_url?: string | undefined
+        
+        /** *introductory text of the element in the response* text preceding the paid ad items */
+        text?: string | undefined
+        
+        /** *content of the element in the markdown format* */
+        markdown?: string | undefined
 
     [key: string]: any;
 
@@ -122,6 +128,16 @@ export class AiModeAiOverviewShoppingElementInfo  implements IAiModeAiOverviewSh
 
     image_url?: string | undefined;
 
+    
+    /** *introductory text of the element in the response* text preceding the paid ad items */
+
+    text?: string | undefined;
+
+    
+    /** *content of the element in the markdown format* */
+
+    markdown?: string | undefined;
+
     [key: string]: any;
 
 
@@ -156,6 +172,8 @@ export class AiModeAiOverviewShoppingElementInfo  implements IAiModeAiOverviewSh
             this.marketplace = data["marketplace"];
             this.marketplace_url = data["marketplace_url"];
             this.image_url = data["image_url"];
+            this.text = data["text"];
+            this.markdown = data["markdown"];
         }
     }
 
@@ -187,6 +205,8 @@ export class AiModeAiOverviewShoppingElementInfo  implements IAiModeAiOverviewSh
         data["marketplace"] = this.marketplace;
         data["marketplace_url"] = this.marketplace_url;
         data["image_url"] = this.image_url;
+        data["text"] = this.text;
+        data["markdown"] = this.markdown;
         return data;
     }
 }

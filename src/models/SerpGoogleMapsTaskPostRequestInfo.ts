@@ -15,7 +15,7 @@ export interface ISerpGoogleMapsTaskPostRequestInfo   {
         /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-maps-serp-api) page. */
         priority?: number | undefined
         
-        /** *device type* optional field return results for a specific device type can take the values:`desktop`, `mobile` default value: `desktop` **note:** for `mobile` device, only 20 results are returned for every SERP */
+        /** *device type* optional field return results for a specific device type can take the values:`desktop`, `mobile` default value: `desktop` */
         device?: string | undefined
         
         /** *notification URL of a completed task* optional field when a task is completed we will notify you by GET request sent to the URL you have specified you can use the ‘$id’ string as a `$id` variable and ‘$tag’ as urlencoded `$tag` variable. We will set the necessary values before sending the request. example: `http://your-server.com/pingscript?id=$id` `http://your-server.com/pingscript?id=$id&tag=$tag` **Note:** special characters in `pingback_url` will be urlencoded; i.a., the `#` character will be encoded into `%23` learn more on our [Help Center](https://dataforseo.com/help-center/pingbacks-postbacks-with-dataforseo-api) */
@@ -89,7 +89,7 @@ export class SerpGoogleMapsTaskPostRequestInfo  implements ISerpGoogleMapsTaskPo
     priority?: number | undefined;
 
     
-    /** *device type* optional field return results for a specific device type can take the values:`desktop`, `mobile` default value: `desktop` **note:** for `mobile` device, only 20 results are returned for every SERP */
+    /** *device type* optional field return results for a specific device type can take the values:`desktop`, `mobile` default value: `desktop` */
 
     device?: string | undefined;
 

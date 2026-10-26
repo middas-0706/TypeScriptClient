@@ -13,3 +13,5 @@
 **url** | **string** | *source URL* |[optional]|
 **is_paid** | **boolean** | *indicates whether the element is an ad* |[optional]|
 **rating** | **RatingInfo** | *the item's rating*. the popularity rate based on reviews and displayed in SERP;. if there is none, equals `null` |[optional]|
+**group_title** | **string** | *title of the hotel listing's group* |[optional]|
+**group_source** | **string** | *domain or brand name of the hotel listing's group* |[optional]|

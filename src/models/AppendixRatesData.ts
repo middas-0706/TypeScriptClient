@@ -1,5 +1,5 @@
 import { AppendixLimitsRatesData, IAppendixLimitsRatesData } from "./AppendixLimitsRatesData";
-import { AppendixStatisticsDataInfo, IAppendixStatisticsDataInfo } from "./AppendixStatisticsDataInfo";
+import { AppendixStatisticsRatesData, IAppendixStatisticsRatesData } from "./AppendixStatisticsRatesData";
 
 
 export interface IAppendixRatesData   {
@@ -8,7 +8,7 @@ export interface IAppendixRatesData   {
         limits?: AppendixLimitsRatesData | undefined
         
         /** *statisctics for API calls* */
-        statistics?: AppendixStatisticsDataInfo | undefined
+        statistics?: AppendixStatisticsRatesData | undefined
 
     [key: string]: any;
 
@@ -24,7 +24,7 @@ export class AppendixRatesData  implements IAppendixRatesData {
     
     /** *statisctics for API calls* */
 
-    statistics?: AppendixStatisticsDataInfo | undefined;
+    statistics?: AppendixStatisticsRatesData | undefined;
 
     [key: string]: any;
 
@@ -47,7 +47,7 @@ export class AppendixRatesData  implements IAppendixRatesData {
                     this[property] = data[property];
             }
             this.limits = data["limits"] ? AppendixLimitsRatesData.fromJS(data["limits"]) : <any>undefined;
-            this.statistics = data["statistics"] ? AppendixStatisticsDataInfo.fromJS(data["statistics"]) : <any>undefined;
+            this.statistics = data["statistics"] ? AppendixStatisticsRatesData.fromJS(data["statistics"]) : <any>undefined;
         }
     }
 
@@ -66,7 +66,7 @@ export class AppendixRatesData  implements IAppendixRatesData {
         
         
         data["limits"] = this.limits ? AppendixLimitsRatesData.fromJS(this.limits)?.toJSON() : <any>undefined;
-        data["statistics"] = this.statistics ? AppendixStatisticsDataInfo.fromJS(this.statistics)?.toJSON() : <any>undefined;
+        data["statistics"] = this.statistics ? AppendixStatisticsRatesData.fromJS(this.statistics)?.toJSON() : <any>undefined;
         return data;
     }
 }

@@ -9,7 +9,7 @@ export interface ISourceInfo   {
         /** *source description* */
         snippet?: string | undefined
         
-        /** *source domain in SERP* */
+        /** *source domain in a ChatGPT result* */
         domain?: string | undefined
         
         /** *source URL* */
@@ -21,7 +21,7 @@ export interface ISourceInfo   {
         /** *source name* */
         source_name?: string | undefined
         
-        /** *date and time when the result was published* in the format: “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes” example: `2019-11-15 12:57:46 +00:00` */
+        /** *date and time when the result was published* in the format: “yyyy-mm-dd hh:mm:ss +hh:mm” example: `2019-11-15 12:57:46 +00:00` */
         publication_date?: string | undefined
         
         /** *content of the element in markdown format* content of the result formatted in the [markdown markup language](https://en.wikipedia.org/wiki/Markdown) */
@@ -49,7 +49,7 @@ export class SourceInfo  implements ISourceInfo {
     snippet?: string | undefined;
 
     
-    /** *source domain in SERP* */
+    /** *source domain in a ChatGPT result* */
 
     domain?: string | undefined;
 
@@ -69,7 +69,7 @@ export class SourceInfo  implements ISourceInfo {
     source_name?: string | undefined;
 
     
-    /** *date and time when the result was published* in the format: “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes” example: `2019-11-15 12:57:46 +00:00` */
+    /** *date and time when the result was published* in the format: “yyyy-mm-dd hh:mm:ss +hh:mm” example: `2019-11-15 12:57:46 +00:00` */
 
     publication_date?: string | undefined;
 

@@ -12,7 +12,7 @@ export interface ISerpGoogleMapsLiveAdvancedRequestInfo   {
         /** *parsing depth* optional field number of results in SERP default value: `100` max value: `700` **Your account will be billed per each SERP containing up to 100 results;** Setting depth above 100 may result in additional charges [if the search engine returns more than 100 results](https://dataforseo.com/help-center/how-many-results-scraped); The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-maps-serp-api) page. */
         depth?: number | undefined
         
-        /** *device type* optional field return results for a specific device type can take the values:`desktop`, `mobile` default value: `desktop` **note:** for `mobile` device, only 20 results are returned for every SERP */
+        /** *device type* optional field return results for a specific device type can take the values:`desktop`, `mobile` default value: `desktop` */
         device?: string | undefined
         
         /** *full name of search engine location* **required field if you don't specify** `location_code` or `location_coordinate` **if you use this field, you don't need to specify `location_code` or `location_coordinate`** you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/locations` example: `London,England,United Kingdom` */
@@ -72,7 +72,7 @@ export class SerpGoogleMapsLiveAdvancedRequestInfo  implements ISerpGoogleMapsLi
     depth?: number | undefined;
 
     
-    /** *device type* optional field return results for a specific device type can take the values:`desktop`, `mobile` default value: `desktop` **note:** for `mobile` device, only 20 results are returned for every SERP */
+    /** *device type* optional field return results for a specific device type can take the values:`desktop`, `mobile` default value: `desktop` */
 
     device?: string | undefined;
 

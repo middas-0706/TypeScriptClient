@@ -15,7 +15,7 @@ export interface IAiOptimizationGeminiLlmScraperLiveHtmlRequestInfo   {
         /** *full name of search engine language* **required field if you don't specify** `language_code` **if you use this field, you don't need to specify `language_code`** you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/ai_optimization/gemini/llm_scraper/languages` example: `English` */
         language_name?: string | undefined
         
-        /** *search engine language code* **required field if you don't specify** `language_name` **if you use this field, you don't need to specify `language_name`** you can receive the list of available languages of the search engine with their `language_code`_by making a separate request to the `https://api.dataforseo.com/v3/ai_optimization/gemini/llm_scraper/languages` example:`en`n */
+        /** *search engine language code* **required field if you don't specify** `language_name` **if you use this field, you don't need to specify `language_name`** you can receive the list of available languages of the search engine with their `language_code` by making a separate request to the `https://api.dataforseo.com/v3/ai_optimization/gemini/llm_scraper/languages` example:`en` */
         language_code?: string | undefined
         
         /** *return expanded citation bar in HTML results* optional field when enabled, the endpoint will return HTML data from the expanded citation bar; default value: `false` */
@@ -56,7 +56,7 @@ export class AiOptimizationGeminiLlmScraperLiveHtmlRequestInfo  implements IAiOp
     language_name?: string | undefined;
 
     
-    /** *search engine language code* **required field if you don't specify** `language_name` **if you use this field, you don't need to specify `language_name`** you can receive the list of available languages of the search engine with their `language_code`_by making a separate request to the `https://api.dataforseo.com/v3/ai_optimization/gemini/llm_scraper/languages` example:`en`n */
+    /** *search engine language code* **required field if you don't specify** `language_name` **if you use this field, you don't need to specify `language_name`** you can receive the list of available languages of the search engine with their `language_code` by making a separate request to the `https://api.dataforseo.com/v3/ai_optimization/gemini/llm_scraper/languages` example:`en` */
 
     language_code?: string | undefined;
 

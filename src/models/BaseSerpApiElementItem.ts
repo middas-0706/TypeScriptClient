@@ -549,13 +549,13 @@ export interface IPaidSerpElementItem  extends IBaseSerpApiElementItem    {
         /** *name of the website in SERP* */
         website_name?: string | undefined
         
-        /** *indicates whether the element contains an_`image`* **Note:** this check no longer appears in SERP */
+        /** *indicates whether the element contains an `image`* **Note:** this check no longer appears in SERP */
         is_image?: boolean | undefined
         
         /** *indicates whether the element contains a `video`* **Note:** this check no longer appears in SERP */
         is_video?: boolean | undefined
         
-        /** *array of properties detected for the SERP element* lists the properties that are true for this element each value in the array represents a detected property  example: if `is_image` is present in the array, the element contains an image possible values in the array: `is_image`, `is_video`, `is_featured_snippet`, `amp_version`, `is_malicious`, `is_web_story`, `is_highly_cited` equals `null` if none of the properties are detected for the element learn more about the `checks` array in [this Help Center article](https://dataforseo.com/help-center/whats-a-checks-array-in-the-google-organic-serp-api) */
+        /** *properties detected for the SERP element* lists the properties that are true for this element each value in the array represents a detected property  example: if `is_image` is present in the array, the element contains an image possible values in the array: `is_image`, `is_video`, `is_featured_snippet`, `amp_version`, `is_malicious`, `is_web_story`, `is_highly_cited` equals `null` if none of the properties are detected for the element learn more about the `checks` array in [this Help Center article](https://dataforseo.com/help-center/whats-a-checks-array-in-the-google-organic-serp-api) */
         checks?: string[] | undefined
         
         /** *images of the element* if there are none, equals `null` */
@@ -626,7 +626,7 @@ export class PaidSerpElementItem  extends BaseSerpApiElementItem   implements IP
     website_name?: string | undefined;
 
     
-    /** *indicates whether the element contains an_`image`* **Note:** this check no longer appears in SERP */
+    /** *indicates whether the element contains an `image`* **Note:** this check no longer appears in SERP */
 
     is_image?: boolean | undefined;
 
@@ -636,7 +636,7 @@ export class PaidSerpElementItem  extends BaseSerpApiElementItem   implements IP
     is_video?: boolean | undefined;
 
     
-    /** *array of properties detected for the SERP element* lists the properties that are true for this element each value in the array represents a detected property  example: if `is_image` is present in the array, the element contains an image possible values in the array: `is_image`, `is_video`, `is_featured_snippet`, `amp_version`, `is_malicious`, `is_web_story`, `is_highly_cited` equals `null` if none of the properties are detected for the element learn more about the `checks` array in [this Help Center article](https://dataforseo.com/help-center/whats-a-checks-array-in-the-google-organic-serp-api) */
+    /** *properties detected for the SERP element* lists the properties that are true for this element each value in the array represents a detected property  example: if `is_image` is present in the array, the element contains an image possible values in the array: `is_image`, `is_video`, `is_featured_snippet`, `amp_version`, `is_malicious`, `is_web_story`, `is_highly_cited` equals `null` if none of the properties are detected for the element learn more about the `checks` array in [this Help Center article](https://dataforseo.com/help-center/whats-a-checks-array-in-the-google-organic-serp-api) */
 
     checks?: string[] | undefined;
 
@@ -808,7 +808,7 @@ export interface IOrganicSerpElementItem  extends IBaseSerpApiElementItem    {
         /** *name of the website in SERP* */
         website_name?: string | undefined
         
-        /** *indicates whether the element contains an_`image`* **Note:** this check no longer appears in SERP */
+        /** *indicates whether the element contains an `image`* **Note:** this check no longer appears in SERP */
         is_image?: boolean | undefined
         
         /** *indicates whether the element contains a `video`* **Note:** this check no longer appears in SERP */
@@ -823,7 +823,7 @@ export interface IOrganicSerpElementItem  extends IBaseSerpApiElementItem    {
         /** *indicates whether the element is marked as Google web story* **Note:** this check no longer appears in SERP */
         is_web_story?: boolean | undefined
         
-        /** *array of properties detected for the SERP element* lists the properties that are true for this element each value in the array represents a detected property  example: if `is_image` is present in the array, the element contains an image possible values in the array: `is_image`, `is_video`, `is_featured_snippet`, `amp_version`, `is_malicious`, `is_web_story`, `is_highly_cited` equals `null` if none of the properties are detected for the element learn more about the `checks` array in [this Help Center article](https://dataforseo.com/help-center/whats-a-checks-array-in-the-google-organic-serp-api) */
+        /** *properties detected for the SERP element* lists the properties that are true for this element each value in the array represents a detected property  example: if `is_image` is present in the array, the element contains an image possible values in the array: `is_image`, `is_video`, `is_featured_snippet`, `amp_version`, `is_malicious`, `is_web_story`, `is_highly_cited` equals `null` if none of the properties are detected for the element learn more about the `checks` array in [this Help Center article](https://dataforseo.com/help-center/whats-a-checks-array-in-the-google-organic-serp-api) */
         checks?: string[] | undefined
         
         /** *includes additional information appended before the result description in SERP* */
@@ -922,7 +922,7 @@ export class OrganicSerpElementItem  extends BaseSerpApiElementItem   implements
     website_name?: string | undefined;
 
     
-    /** *indicates whether the element contains an_`image`* **Note:** this check no longer appears in SERP */
+    /** *indicates whether the element contains an `image`* **Note:** this check no longer appears in SERP */
 
     is_image?: boolean | undefined;
 
@@ -947,7 +947,7 @@ export class OrganicSerpElementItem  extends BaseSerpApiElementItem   implements
     is_web_story?: boolean | undefined;
 
     
-    /** *array of properties detected for the SERP element* lists the properties that are true for this element each value in the array represents a detected property  example: if `is_image` is present in the array, the element contains an image possible values in the array: `is_image`, `is_video`, `is_featured_snippet`, `amp_version`, `is_malicious`, `is_web_story`, `is_highly_cited` equals `null` if none of the properties are detected for the element learn more about the `checks` array in [this Help Center article](https://dataforseo.com/help-center/whats-a-checks-array-in-the-google-organic-serp-api) */
+    /** *properties detected for the SERP element* lists the properties that are true for this element each value in the array represents a detected property  example: if `is_image` is present in the array, the element contains an image possible values in the array: `is_image`, `is_video`, `is_featured_snippet`, `amp_version`, `is_malicious`, `is_web_story`, `is_highly_cited` equals `null` if none of the properties are detected for the element learn more about the `checks` array in [this Help Center article](https://dataforseo.com/help-center/whats-a-checks-array-in-the-google-organic-serp-api) */
 
     checks?: string[] | undefined;
 

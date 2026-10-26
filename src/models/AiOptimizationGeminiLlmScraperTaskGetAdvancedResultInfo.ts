@@ -16,7 +16,7 @@ export interface IAiOptimizationGeminiLlmScraperTaskGetAdvancedResultInfo   {
         /** *indicates the model version* */
         model?: string | undefined
         
-        /** *date and time when the result was received* in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: `2019-11-15 12:57:46 +00:00` */
+        /** *date and time when the result was received* in the UTC format: “yyyy-mm-dd hh:mm:ss +hh:mm” example: `2019-11-15 12:57:46 +00:00` */
         datetime?: string | undefined
         
         /** *content of the element in markdown format* content of the result formatted in the [markdown markup language](https://en.wikipedia.org/wiki/Markdown) */
@@ -28,7 +28,7 @@ export interface IAiOptimizationGeminiLlmScraperTaskGetAdvancedResultInfo   {
         /** *total number of results* */
         se_results_count?: number | undefined
         
-        /** *types of search results* contains types of search results (`items`) found in SERP. possible item types: `gemini_text`, `gemini_table`, `gemini_images` */
+        /** *types of result items* contains types of result `items` found in a Gemini result. possible item types: `gemini_text`, `gemini_table`, `gemini_images` */
         item_types?: string[] | undefined
         
         /** *the number of results returned in the **`items`** array* */
@@ -64,7 +64,7 @@ export class AiOptimizationGeminiLlmScraperTaskGetAdvancedResultInfo  implements
     model?: string | undefined;
 
     
-    /** *date and time when the result was received* in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: `2019-11-15 12:57:46 +00:00` */
+    /** *date and time when the result was received* in the UTC format: “yyyy-mm-dd hh:mm:ss +hh:mm” example: `2019-11-15 12:57:46 +00:00` */
 
     datetime?: string | undefined;
 
@@ -84,7 +84,7 @@ export class AiOptimizationGeminiLlmScraperTaskGetAdvancedResultInfo  implements
     se_results_count?: number | undefined;
 
     
-    /** *types of search results* contains types of search results (`items`) found in SERP. possible item types: `gemini_text`, `gemini_table`, `gemini_images` */
+    /** *types of result items* contains types of result `items` found in a Gemini result. possible item types: `gemini_text`, `gemini_table`, `gemini_images` */
 
     item_types?: string[] | undefined;
 

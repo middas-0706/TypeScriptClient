@@ -3,19 +3,19 @@ export interface ISerpGoogleAiModeLiveHtmlRequestInfo   {
         /** *keyword* **required field** you can specify **up to 700 characters** in the `keyword` field all %## will be decoded (plus character '+' will be decoded to a space character) if you need to use the '%' character for your `keyword`, please specify it as '%25'; if you need to use the “+” character for your `keyword`, please specify it as “%2B”; */
         keyword?: string | undefined
         
-        /** *full name of search engine location* **required field if you don't specify** `location_code` or `location_coordinate` **if you use this field, you don't need to specify `location_code` or `location_coordinate`** you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/locations` example: `London,England,United Kingdom` */
+        /** *full name of search engine location* **required field if you don't specify** `location_code` or `location_coordinate` **if you use this field, you don't need to specify `location_code` or `location_coordinate`** you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/locations` example: `London,England,United Kingdom` */
         location_name?: string | undefined
         
-        /** *search engine location code* **required field if you don't specify** `location_name`_or `location_coordinate` **if you use this field, you don't need to specify `location_name` or `location_coordinate`** you can receive the list of available locations of the search engines with their `location_code` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/locations` example: `2840`n */
+        /** *search engine location code* **required field if you don't specify** `location_name`_or `location_coordinate` **if you use this field, you don't need to specify `location_name` or `location_coordinate`** you can receive the list of available locations of the search engines with their `location_code` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/locations` example: `2840` */
         location_code?: number | undefined
         
         /** *GPS coordinates of a location* **required field if you don't specify** `location_name`_or `location_code` **if you use this field, you don't need to specify `location_name` or `location_code`** `location_coordinate` parameter should be specified in the *'latitude,longitude,radius'* format the maximum number of decimal digits for *'latitude'* and *'longitude'*: 7 the minimum value for *'radius'*: 199.9 (mm) the maximum value for *'radius'*: 199999 (mm) example: `53.476225,-2.243572,200`n */
         location_coordinate?: string | undefined
         
-        /** *full name of search engine language* required field if you don't specify `language_code`; if you use this field, you don't need to specify `language_code`; you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/ai_mode/languages`; */
+        /** *full name of search engine language* required field if you don't specify `language_code`; if you use this field, you don't need to specify `language_code`; you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/ai_mode/languages` */
         language_name?: string | undefined
         
-        /** *search engine language code* required field if you don't specify `language_name`; if you use this field, you don't need to specify `language_name`; you can receive the list of available languages of the search engine with their `language_code`_by making a separate request to the `https://api.dataforseo.com/v3/serp/google/ai_mode/languages`n */
+        /** *search engine language code* required field if you don't specify `language_name`; if you use this field, you don't need to specify `language_name`; you can receive the list of available languages of the search engine with their `language_code`_by making a separate request to the `https://api.dataforseo.com/v3/serp/google/ai_mode/languages` */
         language_code?: string | undefined
         
         /** *device type* optional field return results for a specific device type can take the values:`desktop`, `mobile` default value: `desktop` */
@@ -39,12 +39,12 @@ export class SerpGoogleAiModeLiveHtmlRequestInfo  implements ISerpGoogleAiModeLi
     keyword?: string | undefined;
 
     
-    /** *full name of search engine location* **required field if you don't specify** `location_code` or `location_coordinate` **if you use this field, you don't need to specify `location_code` or `location_coordinate`** you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/locations` example: `London,England,United Kingdom` */
+    /** *full name of search engine location* **required field if you don't specify** `location_code` or `location_coordinate` **if you use this field, you don't need to specify `location_code` or `location_coordinate`** you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/locations` example: `London,England,United Kingdom` */
 
     location_name?: string | undefined;
 
     
-    /** *search engine location code* **required field if you don't specify** `location_name`_or `location_coordinate` **if you use this field, you don't need to specify `location_name` or `location_coordinate`** you can receive the list of available locations of the search engines with their `location_code` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/locations` example: `2840`n */
+    /** *search engine location code* **required field if you don't specify** `location_name`_or `location_coordinate` **if you use this field, you don't need to specify `location_name` or `location_coordinate`** you can receive the list of available locations of the search engines with their `location_code` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/locations` example: `2840` */
 
     location_code?: number | undefined;
 
@@ -54,12 +54,12 @@ export class SerpGoogleAiModeLiveHtmlRequestInfo  implements ISerpGoogleAiModeLi
     location_coordinate?: string | undefined;
 
     
-    /** *full name of search engine language* required field if you don't specify `language_code`; if you use this field, you don't need to specify `language_code`; you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/ai_mode/languages`; */
+    /** *full name of search engine language* required field if you don't specify `language_code`; if you use this field, you don't need to specify `language_code`; you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/ai_mode/languages` */
 
     language_name?: string | undefined;
 
     
-    /** *search engine language code* required field if you don't specify `language_name`; if you use this field, you don't need to specify `language_name`; you can receive the list of available languages of the search engine with their `language_code`_by making a separate request to the `https://api.dataforseo.com/v3/serp/google/ai_mode/languages`n */
+    /** *search engine language code* required field if you don't specify `language_name`; if you use this field, you don't need to specify `language_name`; you can receive the list of available languages of the search engine with their `language_code`_by making a separate request to the `https://api.dataforseo.com/v3/serp/google/ai_mode/languages` */
 
     language_code?: string | undefined;
 

@@ -3,7 +3,7 @@ export interface IAiOptimizationChatGptLlmScraperTaskPostRequestInfo   {
         /** *keyword* **required field** you can specify **up to 2000 characters** in the `keyword` field all %## will be decoded (plus character ‘+’ will be decoded to a space character) if you need to use the “%” character for your `keyword`, please specify it as “%25”; if you need to use the “+” character for your `keyword`, please specify it as “%2B” learn more about rules and limitations of `keyword` and `keywords` fields in DataForSEO APIs in this [Help Center article](https://dataforseo.com/help-center/rules-and-limitations-of-keyword-and-keywords-fields-in-dataforseo-apis) */
         keyword?: string | undefined
         
-        /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priorityYou will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/ai-optimization/llm-scraper) page. */
+        /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/ai-optimization/llm-scraper) page. */
         priority?: number | undefined
         
         /** *full name of search engine location* **required field if you don't specify** `location_code` **if you use this field, you don't need to specify `location_code`** you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/locations` example: `United States` */
@@ -12,10 +12,10 @@ export interface IAiOptimizationChatGptLlmScraperTaskPostRequestInfo   {
         /** *search engine location code* **required field if you don't specify** `location_name` **if you use this field, you don't need to specify `location_name`** you can receive the list of available locations of the search engines with their `location_code` by making a separate request to the `https://api.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/locations` example: `2840` */
         location_code?: number | undefined
         
-        /** *full name of search engine language* required field if you don't specify `language_code`; if you use this field, you don't need to specify `language_code`; you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/languages` */
+        /** *full name of search engine language* required field if you don't specify `language_code`; if you use this field, you don't need to specify `language_code`; you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/languages` example: `English` */
         language_name?: string | undefined
         
-        /** *search engine language code* required field if you don't specify `language_name`; if you use this field, you don't need to specify `language_name`; you can receive the list of available languages of the search engine with their `language_code`_by making a separate request to the `https://api.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/languages`n */
+        /** *search engine language code* required field if you don't specify `language_name`; if you use this field, you don't need to specify `language_name`; you can receive the list of available languages of the search engine with their `language_code` by making a separate request to the `https://api.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/languages` example: `en` */
         language_code?: string | undefined
         
         /** *force AI agent to use web search* optional field when enabled, the AI model is forced to access and cite current web information; default value: `false`; **Note:** even if the parameter is set to `true`, there is no guarantee web sources will be cited in the response */
@@ -48,7 +48,7 @@ export class AiOptimizationChatGptLlmScraperTaskPostRequestInfo  implements IAiO
     keyword?: string | undefined;
 
     
-    /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priorityYou will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/ai-optimization/llm-scraper) page. */
+    /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/ai-optimization/llm-scraper) page. */
 
     priority?: number | undefined;
 
@@ -63,12 +63,12 @@ export class AiOptimizationChatGptLlmScraperTaskPostRequestInfo  implements IAiO
     location_code?: number | undefined;
 
     
-    /** *full name of search engine language* required field if you don't specify `language_code`; if you use this field, you don't need to specify `language_code`; you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/languages` */
+    /** *full name of search engine language* required field if you don't specify `language_code`; if you use this field, you don't need to specify `language_code`; you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/languages` example: `English` */
 
     language_name?: string | undefined;
 
     
-    /** *search engine language code* required field if you don't specify `language_name`; if you use this field, you don't need to specify `language_name`; you can receive the list of available languages of the search engine with their `language_code`_by making a separate request to the `https://api.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/languages`n */
+    /** *search engine language code* required field if you don't specify `language_name`; if you use this field, you don't need to specify `language_name`; you can receive the list of available languages of the search engine with their `language_code` by making a separate request to the `https://api.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/languages` example: `en` */
 
     language_code?: string | undefined;
 
