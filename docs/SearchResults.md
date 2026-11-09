@@ -4,10 +4,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**description** | **string** | *result description* |[optional]|
-**breadcrumb** | **string** | *breadcrumb* |[optional]|
-**rank** | **number** | *rank in the results* |[optional]|
-**title** | **string** | *source title* |[optional]|
-**domain** | **string** | *source domain* |[optional]|
-**url** | **string** | *source URL* |[optional]|
-**publication_date** | **string** | *date and time when the result was published*. in the format: “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes”. example:. `2019-11-15 12:57:46 +00:00` |[optional]|
+**title** | **string** | *the domain name or title of the quoted source* |[optional]|
+**url** | **string** | *URL of the quoted source* |[optional]|
+**date** | **string** | *publishing date*. date when the page appearing in the search result was published or indexed.  in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” |[optional]|
+**snippet** | **string** | *text snippet in the search result* |[optional]|

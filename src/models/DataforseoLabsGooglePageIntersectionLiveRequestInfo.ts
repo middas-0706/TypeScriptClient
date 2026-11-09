@@ -18,7 +18,7 @@ export interface IDataforseoLabsGooglePageIntersectionLiveRequestInfo   {
         /** language coderequired field if you don't specify language_nameNote: it is required to specify either language_name or language_codeyou can receive the list of available languages with their language_code by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languagesexample:en */
         language_code?: string | undefined
         
-        /** search results typeindicates type of search results included in the responseoptional fieldpossible values: ['organic', 'paid', 'featured_snippet', 'local_pack']default value: ['organic', 'paid'] */
+        /** search results typeindicates type of search results included in the responseoptional fieldpossible values: ['organic', 'paid', 'featured_snippet', 'local_pack', 'ai_overview_reference']default value: ['organic', 'paid'] */
         item_types?: string[] | undefined
         
         /** the maximum number of returned keywordsoptional fielddefault value: 100maximum value: 1000 */
@@ -88,7 +88,7 @@ export class DataforseoLabsGooglePageIntersectionLiveRequestInfo  implements IDa
     language_code?: string | undefined;
 
     
-    /** search results typeindicates type of search results included in the responseoptional fieldpossible values: ['organic', 'paid', 'featured_snippet', 'local_pack']default value: ['organic', 'paid'] */
+    /** search results typeindicates type of search results included in the responseoptional fieldpossible values: ['organic', 'paid', 'featured_snippet', 'local_pack', 'ai_overview_reference']default value: ['organic', 'paid'] */
 
     item_types?: string[] | undefined;
 

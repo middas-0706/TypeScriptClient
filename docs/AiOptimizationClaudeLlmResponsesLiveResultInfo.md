@@ -13,3 +13,4 @@
 **datetime** | **string** | *date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00` |[optional]|
 **items** | **BaseAiOptimizationLlmResponseElementItem[]** | *array of response items*. contains structured AI response data |[optional]|
 **fan_out_queries** | **string[]** | *array of fan-out queries*. contains related search queries derived from the main query to provide a more comprehensive response |[optional]|
+**search_results** | **SearchResults[]** | *array of search results*. contains objects with search results relevant to the user query and model's response |[optional]|

@@ -1,25 +1,16 @@
 export interface ISearchResults   {
         
-        /** *result description* */
-        description?: string | undefined
-        
-        /** *breadcrumb* */
-        breadcrumb?: string | undefined
-        
-        /** *rank in the results* */
-        rank?: number | undefined
-        
-        /** *source title* */
+        /** *the domain name or title of the quoted source* */
         title?: string | undefined
         
-        /** *source domain* */
-        domain?: string | undefined
-        
-        /** *source URL* */
+        /** *URL of the quoted source* */
         url?: string | undefined
         
-        /** *date and time when the result was published* in the format: “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes” example: `2019-11-15 12:57:46 +00:00` */
-        publication_date?: string | undefined
+        /** *publishing date* date when the page appearing in the search result was published or indexed  in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” */
+        date?: string | undefined
+        
+        /** *text snippet in the search result* */
+        snippet?: string | undefined
 
     [key: string]: any;
 
@@ -28,39 +19,24 @@ export interface ISearchResults   {
 export class SearchResults  implements ISearchResults {
 
     
-    /** *result description* */
-
-    description?: string | undefined;
-
-    
-    /** *breadcrumb* */
-
-    breadcrumb?: string | undefined;
-
-    
-    /** *rank in the results* */
-
-    rank?: number | undefined;
-
-    
-    /** *source title* */
+    /** *the domain name or title of the quoted source* */
 
     title?: string | undefined;
 
     
-    /** *source domain* */
-
-    domain?: string | undefined;
-
-    
-    /** *source URL* */
+    /** *URL of the quoted source* */
 
     url?: string | undefined;
 
     
-    /** *date and time when the result was published* in the format: “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes” example: `2019-11-15 12:57:46 +00:00` */
+    /** *publishing date* date when the page appearing in the search result was published or indexed  in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” */
 
-    publication_date?: string | undefined;
+    date?: string | undefined;
+
+    
+    /** *text snippet in the search result* */
+
+    snippet?: string | undefined;
 
     [key: string]: any;
 
@@ -82,13 +58,10 @@ export class SearchResults  implements ISearchResults {
                 if (data.hasOwnProperty(property))
                     this[property] = data[property];
             }
-            this.description = data["description"];
-            this.breadcrumb = data["breadcrumb"];
-            this.rank = data["rank"];
             this.title = data["title"];
-            this.domain = data["domain"];
             this.url = data["url"];
-            this.publication_date = data["publication_date"];
+            this.date = data["date"];
+            this.snippet = data["snippet"];
         }
     }
 
@@ -106,13 +79,10 @@ export class SearchResults  implements ISearchResults {
 
         
         
-        data["description"] = this.description;
-        data["breadcrumb"] = this.breadcrumb;
-        data["rank"] = this.rank;
         data["title"] = this.title;
-        data["domain"] = this.domain;
         data["url"] = this.url;
-        data["publication_date"] = this.publication_date;
+        data["date"] = this.date;
+        data["snippet"] = this.snippet;
         return data;
     }
 }

@@ -1,4 +1,5 @@
 import { MessageAiOptimizationLlmResponseElementItem, IMessageAiOptimizationLlmResponseElementItem } from "./BaseAiOptimizationLlmResponseElementItem";
+import { SearchResults, ISearchResults } from "./SearchResults";
 
 
 export interface IAiOptimizationPerplexityLlmResponsesLiveResultInfo   {
@@ -27,7 +28,10 @@ export interface IAiOptimizationPerplexityLlmResponsesLiveResultInfo   {
         items?: MessageAiOptimizationLlmResponseElementItem[] | undefined
         
         /** *array of fan-out queries* contains related search queries derived from the main query to provide a more comprehensive response */
-        fan_out_queries?: any | undefined
+        fan_out_queries?: string[] | undefined
+        
+        /** *array of search results* contains objects with search results relevant to the user query and model's response */
+        search_results?: SearchResults[] | undefined
 
     [key: string]: any;
 
@@ -75,7 +79,12 @@ export class AiOptimizationPerplexityLlmResponsesLiveResultInfo  implements IAiO
     
     /** *array of fan-out queries* contains related search queries derived from the main query to provide a more comprehensive response */
 
-    fan_out_queries?: any | undefined;
+    fan_out_queries?: string[] | undefined;
+
+    
+    /** *array of search results* contains objects with search results relevant to the user query and model's response */
+
+    search_results?: SearchResults[] | undefined;
 
     [key: string]: any;
 
@@ -111,6 +120,12 @@ export class AiOptimizationPerplexityLlmResponsesLiveResultInfo  implements IAiO
                 }
             }
             this.fan_out_queries = data["fan_out_queries"];
+            if (Array.isArray(data["search_results"])) {
+                this.search_results = [];
+                for (let item of data["search_results"]) {
+                    this.search_results.push(SearchResults.fromJS(item));
+                }
+            }
         }
     }
 
@@ -145,6 +160,15 @@ export class AiOptimizationPerplexityLlmResponsesLiveResultInfo  implements IAiO
             }
         }
         data["fan_out_queries"] = this.fan_out_queries;
+        data["search_results"] = null;
+        if (Array.isArray(this.search_results)) {
+            data["search_results"] = [];
+            for (let item of this.search_results) {
+                if (item && typeof item.toJSON === "function") {
+                    data["search_results"].push(item?.toJSON());
+                }
+            }
+        }
         return data;
     }
 }

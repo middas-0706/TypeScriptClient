@@ -1,5 +1,5 @@
 import { Sources, ISources } from "./Sources";
-import { SearchResults, ISearchResults } from "./SearchResults";
+import { ItemsSearchResults, IItemsSearchResults } from "./ItemsSearchResults";
 import { MonthlySearchesInfo, IMonthlySearchesInfo } from "./MonthlySearchesInfo";
 import { BrandEntities, IBrandEntities } from "./BrandEntities";
 
@@ -28,7 +28,7 @@ export interface IAiOptimizationLlmMentionsSearchMentionsLiveItem   {
         sources?: Sources[] | undefined
         
         /** *array of search results* all web search outputs the model retrieved when looking up information, including duplicates and unused entries **Note:** available only for `chat_gpt` */
-        search_results?: SearchResults[] | undefined
+        search_results?: ItemsSearchResults[] | undefined
         
         /** *current AI search volume rate of a keyword* learn more about this metric [here](https://dataforseo.com/help-center/how-the-ai-search-volume-metric-works-in-llm-mentions) */
         ai_search_volume?: number | undefined
@@ -95,7 +95,7 @@ export class AiOptimizationLlmMentionsSearchMentionsLiveItem  implements IAiOpti
     
     /** *array of search results* all web search outputs the model retrieved when looking up information, including duplicates and unused entries **Note:** available only for `chat_gpt` */
 
-    search_results?: SearchResults[] | undefined;
+    search_results?: ItemsSearchResults[] | undefined;
 
     
     /** *current AI search volume rate of a keyword* learn more about this metric [here](https://dataforseo.com/help-center/how-the-ai-search-volume-metric-works-in-llm-mentions) */
@@ -167,7 +167,7 @@ export class AiOptimizationLlmMentionsSearchMentionsLiveItem  implements IAiOpti
             if (Array.isArray(data["search_results"])) {
                 this.search_results = [];
                 for (let item of data["search_results"]) {
-                    this.search_results.push(SearchResults.fromJS(item));
+                    this.search_results.push(ItemsSearchResults.fromJS(item));
                 }
             }
             this.ai_search_volume = data["ai_search_volume"];

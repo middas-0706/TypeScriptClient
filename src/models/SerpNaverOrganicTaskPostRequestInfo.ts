@@ -12,7 +12,7 @@ export interface ISerpNaverOrganicTaskPostRequestInfo   {
         /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priorityYou will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/naver-organic-serp-api) page. */
         priority?: number | undefined
         
-        /** *parsing depth* optional field number of results in SERP default value: `15` max value: `700` **Your account will be billed per each SERP containing up to 15 results;**  Setting depth above 15 may result in additional charges [if the search engine returns more than 15 results](https://dataforseo.com/help-center/how-many-results-scraped); The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/naver-organic-serp-api) page. */
+        /** *parsing depth* optional field number of results in SERP default value: `20` max value: `700` **Your account will be billed per each SERP containing up to 20 results;**  Setting depth above 20 may result in additional charges [if the search engine returns more than 20 results](https://dataforseo.com/help-center/how-many-results-scraped); The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/naver-organic-serp-api) page. */
         depth?: number | undefined
         
         /** *page crawl limit* optional field number of search results pages to crawl default value: `1` max value: `100` **Note:** the `max_crawl_pages` and `depth` parameters complement each other; learn more at [our help center](https://dataforseo.com/help-center/what-is-max-crawl-pages-and-how-does-it-work) */
@@ -67,7 +67,7 @@ export class SerpNaverOrganicTaskPostRequestInfo  implements ISerpNaverOrganicTa
     priority?: number | undefined;
 
     
-    /** *parsing depth* optional field number of results in SERP default value: `15` max value: `700` **Your account will be billed per each SERP containing up to 15 results;**  Setting depth above 15 may result in additional charges [if the search engine returns more than 15 results](https://dataforseo.com/help-center/how-many-results-scraped); The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/naver-organic-serp-api) page. */
+    /** *parsing depth* optional field number of results in SERP default value: `20` max value: `700` **Your account will be billed per each SERP containing up to 20 results;**  Setting depth above 20 may result in additional charges [if the search engine returns more than 20 results](https://dataforseo.com/help-center/how-many-results-scraped); The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/naver-organic-serp-api) page. */
 
     depth?: number | undefined;
 
