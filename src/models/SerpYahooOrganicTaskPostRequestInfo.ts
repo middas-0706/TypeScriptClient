@@ -1,6 +1,3 @@
-import { SerpApiStopCrawlOnMatchInfo, ISerpApiStopCrawlOnMatchInfo } from "./SerpApiStopCrawlOnMatchInfo";
-
-
 export interface ISerpYahooOrganicTaskPostRequestInfo   {
         
         /** *direct URL of the search query* optional field you can specify a direct URL and we will sort it out to the necessary fields. Note that this method is the most difficult for our API to process and also requires you to specify the exact language and location in the URL. In most cases, we wouldn’t recommend using this method. example: `https://search.yahoo.com/search?p=rank+checker&n=100&vl=lang_en&vc=us&ei=UTF-8` */
@@ -44,9 +41,6 @@ export interface ISerpYahooOrganicTaskPostRequestInfo   {
         
         /** *additional parameters of the search query* optional field [get the list of available parameters and additional details here](https://dataforseo.com/help-center/yahoo-search-engine-parameters-and-how-to-use-them) */
         search_param?: string | undefined
-        
-        /** array of targets to stop crawling optional field if specified, the response will contain SERP results up to and including the specified match_value; you can specify up to 10 target values in this array example: 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}] learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api Your account will be billed per each SERP crawled through the specified targets */
-        stop_crawl_on_match?: SerpApiStopCrawlOnMatchInfo[] | undefined
         
         /** *user-defined task identifier* optional field *the character limit is 255* you can use this parameter to identify the task and match it with the result you will find the specified `tag` value in the `data` object of the response */
         tag?: string | undefined
@@ -137,11 +131,6 @@ export class SerpYahooOrganicTaskPostRequestInfo  implements ISerpYahooOrganicTa
     search_param?: string | undefined;
 
     
-    /** array of targets to stop crawling optional field if specified, the response will contain SERP results up to and including the specified match_value; you can specify up to 10 target values in this array example: 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}] learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api Your account will be billed per each SERP crawled through the specified targets */
-
-    stop_crawl_on_match?: SerpApiStopCrawlOnMatchInfo[] | undefined;
-
-    
     /** *user-defined task identifier* optional field *the character limit is 255* you can use this parameter to identify the task and match it with the result you will find the specified `tag` value in the `data` object of the response */
 
     tag?: string | undefined;
@@ -195,12 +184,6 @@ export class SerpYahooOrganicTaskPostRequestInfo  implements ISerpYahooOrganicTa
             this.depth = data["depth"];
             this.max_crawl_pages = data["max_crawl_pages"];
             this.search_param = data["search_param"];
-            if (Array.isArray(data["stop_crawl_on_match"])) {
-                this.stop_crawl_on_match = [];
-                for (let item of data["stop_crawl_on_match"]) {
-                    this.stop_crawl_on_match.push(SerpApiStopCrawlOnMatchInfo.fromJS(item));
-                }
-            }
             this.tag = data["tag"];
             this.postback_url = data["postback_url"];
             this.postback_data = data["postback_data"];
@@ -236,15 +219,6 @@ export class SerpYahooOrganicTaskPostRequestInfo  implements ISerpYahooOrganicTa
         data["depth"] = this.depth;
         data["max_crawl_pages"] = this.max_crawl_pages;
         data["search_param"] = this.search_param;
-        data["stop_crawl_on_match"] = null;
-        if (Array.isArray(this.stop_crawl_on_match)) {
-            data["stop_crawl_on_match"] = [];
-            for (let item of this.stop_crawl_on_match) {
-                if (item && typeof item.toJSON === "function") {
-                    data["stop_crawl_on_match"].push(item?.toJSON());
-                }
-            }
-        }
         data["tag"] = this.tag;
         data["postback_url"] = this.postback_url;
         data["postback_data"] = this.postback_data;

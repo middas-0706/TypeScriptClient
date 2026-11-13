@@ -18,8 +18,11 @@ export interface ISerpGoogleSearchByImageTaskPostRequestInfo   {
         /** *postback_url datatype* **required field if you specify `postback_url`** corresponds to the datatype that will be sent to your server possible values: `advanced`, `html` */
         postback_data?: string | undefined
         
-        /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-search-by-image-serp-api) page. */
+        /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-search-by-image-serp-api) page */
         priority?: number | undefined
+        
+        /** *resolve goto redirect URLs* optional field set to `true` to resolve goto redirect URLs in SERPs for tasks with high execution priority default value for tasks with `priority: 1` is `true` default value for tasks with `priority: 2` is `false` **Note:** this parameter adds up to 40 seconds to the turnaround time of high-priority tasks, with a maximum turnaround time of 260 seconds */
+        resolve_goto_urls?: boolean | undefined
         
         /** *full name of search engine location* **required field if you don't specify** `location_code` or `location_coordinate` **if you use this field, you don't need to specify `location_code` or `location_coordinate`** you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/locations` example: `London,England,United Kingdom` */
         location_name?: string | undefined
@@ -91,9 +94,14 @@ export class SerpGoogleSearchByImageTaskPostRequestInfo  implements ISerpGoogleS
     postback_data?: string | undefined;
 
     
-    /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-search-by-image-serp-api) page. */
+    /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-search-by-image-serp-api) page */
 
     priority?: number | undefined;
+
+    
+    /** *resolve goto redirect URLs* optional field set to `true` to resolve goto redirect URLs in SERPs for tasks with high execution priority default value for tasks with `priority: 1` is `true` default value for tasks with `priority: 2` is `false` **Note:** this parameter adds up to 40 seconds to the turnaround time of high-priority tasks, with a maximum turnaround time of 260 seconds */
+
+    resolve_goto_urls?: boolean | undefined;
 
     
     /** *full name of search engine location* **required field if you don't specify** `location_code` or `location_coordinate` **if you use this field, you don't need to specify `location_code` or `location_coordinate`** you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/locations` example: `London,England,United Kingdom` */
@@ -177,6 +185,7 @@ export class SerpGoogleSearchByImageTaskPostRequestInfo  implements ISerpGoogleS
             this.postback_url = data["postback_url"];
             this.postback_data = data["postback_data"];
             this.priority = data["priority"];
+            this.resolve_goto_urls = data["resolve_goto_urls"];
             this.location_name = data["location_name"];
             this.language_name = data["language_name"];
             this.tag = data["tag"];
@@ -212,6 +221,7 @@ export class SerpGoogleSearchByImageTaskPostRequestInfo  implements ISerpGoogleS
         data["postback_url"] = this.postback_url;
         data["postback_data"] = this.postback_data;
         data["priority"] = this.priority;
+        data["resolve_goto_urls"] = this.resolve_goto_urls;
         data["location_name"] = this.location_name;
         data["language_name"] = this.language_name;
         data["tag"] = this.tag;

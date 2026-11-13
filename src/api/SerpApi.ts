@@ -10,7 +10,6 @@ import { SerpGoogleLocationsResponseInfo } from "./../models/SerpGoogleLocations
 import { SerpGoogleLocationsCountryResponseInfo } from "./../models/SerpGoogleLocationsCountryResponseInfo";
 import { SerpGoogleLanguagesResponseInfo } from "./../models/SerpGoogleLanguagesResponseInfo";
 import { SerpGoogleOrganicTaskPostRequestInfo } from "./../models/SerpGoogleOrganicTaskPostRequestInfo";
-import { SerpApiStopCrawlOnMatchInfo } from "./../models/SerpApiStopCrawlOnMatchInfo";
 import { SerpGoogleOrganicTaskPostResponseInfo } from "./../models/SerpGoogleOrganicTaskPostResponseInfo";
 import { SerpGoogleOrganicTasksReadyResponseInfo } from "./../models/SerpGoogleOrganicTasksReadyResponseInfo";
 import { SerpTasksReadyResponseInfo } from "./../models/SerpTasksReadyResponseInfo";
@@ -259,7 +258,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -294,7 +293,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -329,7 +328,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -364,7 +363,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -396,7 +395,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -424,13 +423,13 @@ export class SerpApi {
     }
     googleLocationsCountry(country: string): Promise<SerpGoogleLocationsCountryResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/locations/{country}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{country}", encodeURIComponent("" + country));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -463,7 +462,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -499,7 +498,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -531,7 +530,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -564,7 +563,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -597,7 +596,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -623,15 +622,17 @@ export class SerpApi {
         }
         return Promise.resolve<SerpGoogleOrganicTasksFixedResponseInfo | null>(null as any);
     }
-    googleOrganicTaskGetRegular(id: string): Promise<SerpGoogleOrganicTaskGetRegularResponseInfo | null> {
-        let url_ = this.baseUrl + "/v3/serp/google/organic/task_get/regular/{id}";
-        url_ = url_.replace(/[?&]$/, "");
+    googleOrganicTaskGetRegular(id: string, resolveGotoUrls?: boolean | null): Promise<SerpGoogleOrganicTaskGetRegularResponseInfo | null> {
+        let url_ = this.baseUrl + "/v3/serp/google/organic/task_get/regular/{id}?";
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        if (resolveGotoUrls !== undefined && resolveGotoUrls !== null)
+            url_ += "resolve_goto_urls=" + encodeURIComponent("" + resolveGotoUrls) + "&";
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -657,15 +658,17 @@ export class SerpApi {
         }
         return Promise.resolve<SerpGoogleOrganicTaskGetRegularResponseInfo | null>(null as any);
     }
-    googleOrganicTaskGetAdvanced(id: string): Promise<SerpGoogleOrganicTaskGetAdvancedResponseInfo | null> {
-        let url_ = this.baseUrl + "/v3/serp/google/organic/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
+    googleOrganicTaskGetAdvanced(id: string, resolveGotoUrls?: boolean | null): Promise<SerpGoogleOrganicTaskGetAdvancedResponseInfo | null> {
+        let url_ = this.baseUrl + "/v3/serp/google/organic/task_get/advanced/{id}?";
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        if (resolveGotoUrls !== undefined && resolveGotoUrls !== null)
+            url_ += "resolve_goto_urls=" + encodeURIComponent("" + resolveGotoUrls) + "&";
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -693,13 +696,13 @@ export class SerpApi {
     }
     googleOrganicTaskGetHtml(id: string): Promise<SerpGoogleOrganicTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/organic/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -735,7 +738,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -770,7 +773,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -805,7 +808,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -837,7 +840,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -873,7 +876,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -905,7 +908,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -938,7 +941,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -966,13 +969,13 @@ export class SerpApi {
     }
     googleAiModeTaskGetAdvanced(id: string): Promise<SerpGoogleAiModeTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/ai_mode/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1000,13 +1003,13 @@ export class SerpApi {
     }
     googleAiModeTaskGetHtml(id: string): Promise<SerpGoogleAiModeTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/ai_mode/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1042,7 +1045,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1077,7 +1080,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1112,7 +1115,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1144,7 +1147,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1177,7 +1180,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1205,13 +1208,13 @@ export class SerpApi {
     }
     googleMapsTaskGetAdvanced(id: string): Promise<SerpGoogleMapsTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/maps/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1247,7 +1250,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1282,7 +1285,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1314,7 +1317,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1347,7 +1350,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1373,15 +1376,17 @@ export class SerpApi {
         }
         return Promise.resolve<SerpGoogleLocalFinderTasksFixedResponseInfo | null>(null as any);
     }
-    googleLocalFinderTaskGetAdvanced(id: string): Promise<SerpGoogleLocalFinderTaskGetAdvancedResponseInfo | null> {
-        let url_ = this.baseUrl + "/v3/serp/google/local_finder/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
+    googleLocalFinderTaskGetAdvanced(id: string, resolveGotoUrls?: boolean | null): Promise<SerpGoogleLocalFinderTaskGetAdvancedResponseInfo | null> {
+        let url_ = this.baseUrl + "/v3/serp/google/local_finder/task_get/advanced/{id}?";
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        if (resolveGotoUrls !== undefined && resolveGotoUrls !== null)
+            url_ += "resolve_goto_urls=" + encodeURIComponent("" + resolveGotoUrls) + "&";
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1409,13 +1414,13 @@ export class SerpApi {
     }
     googleLocalFinderTaskGetHtml(id: string): Promise<SerpGoogleLocalFinderTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/local_finder/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1451,7 +1456,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1486,7 +1491,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1521,7 +1526,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1553,7 +1558,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1586,7 +1591,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1612,15 +1617,17 @@ export class SerpApi {
         }
         return Promise.resolve<SerpGoogleNewsTasksFixedResponseInfo | null>(null as any);
     }
-    googleNewsTaskGetAdvanced(id: string): Promise<SerpGoogleNewsTaskGetAdvancedResponseInfo | null> {
-        let url_ = this.baseUrl + "/v3/serp/google/news/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
+    googleNewsTaskGetAdvanced(id: string, resolveGotoUrls?: boolean | null): Promise<SerpGoogleNewsTaskGetAdvancedResponseInfo | null> {
+        let url_ = this.baseUrl + "/v3/serp/google/news/task_get/advanced/{id}?";
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        if (resolveGotoUrls !== undefined && resolveGotoUrls !== null)
+            url_ += "resolve_goto_urls=" + encodeURIComponent("" + resolveGotoUrls) + "&";
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1648,13 +1655,13 @@ export class SerpApi {
     }
     googleNewsTaskGetHtml(id: string): Promise<SerpGoogleNewsTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/news/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1690,7 +1697,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1725,7 +1732,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1760,7 +1767,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1792,7 +1799,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1825,7 +1832,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1853,13 +1860,13 @@ export class SerpApi {
     }
     googleImagesTaskGetAdvanced(id: string): Promise<SerpGoogleImagesTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/images/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1887,13 +1894,13 @@ export class SerpApi {
     }
     googleImagesTaskGetHtml(id: string): Promise<SerpGoogleImagesTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/images/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1929,7 +1936,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1964,7 +1971,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1999,7 +2006,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -2031,7 +2038,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2064,7 +2071,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2090,15 +2097,17 @@ export class SerpApi {
         }
         return Promise.resolve<SerpGoogleSearchByImageTasksFixedResponseInfo | null>(null as any);
     }
-    googleSearchByImageTaskGetAdvanced(id: string): Promise<SerpGoogleSearchByImageTaskGetAdvancedResponseInfo | null> {
-        let url_ = this.baseUrl + "/v3/serp/google/search_by_image/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
+    googleSearchByImageTaskGetAdvanced(id: string, resolveGotoUrls?: boolean | null): Promise<SerpGoogleSearchByImageTaskGetAdvancedResponseInfo | null> {
+        let url_ = this.baseUrl + "/v3/serp/google/search_by_image/task_get/advanced/{id}?";
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        if (resolveGotoUrls !== undefined && resolveGotoUrls !== null)
+            url_ += "resolve_goto_urls=" + encodeURIComponent("" + resolveGotoUrls) + "&";
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2134,7 +2143,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -2166,7 +2175,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2199,7 +2208,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2227,13 +2236,13 @@ export class SerpApi {
     }
     googleJobsTaskGetAdvanced(id: string): Promise<SerpGoogleJobsTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/jobs/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2261,13 +2270,13 @@ export class SerpApi {
     }
     googleJobsTaskGetHtml(id: string): Promise<SerpGoogleJobsTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/jobs/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2303,7 +2312,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -2335,7 +2344,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2368,7 +2377,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2396,13 +2405,13 @@ export class SerpApi {
     }
     googleAutocompleteTaskGetAdvanced(id: string): Promise<SerpGoogleAutocompleteTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/autocomplete/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2438,7 +2447,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -2473,7 +2482,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -2505,7 +2514,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2538,7 +2547,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2566,13 +2575,13 @@ export class SerpApi {
     }
     googleDatasetSearchTaskGetAdvanced(id: string): Promise<SerpGoogleDatasetSearchTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/dataset_search/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2608,7 +2617,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -2643,7 +2652,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -2675,7 +2684,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2708,7 +2717,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2736,13 +2745,13 @@ export class SerpApi {
     }
     googleDatasetInfoTaskGetAdvanced(id: string): Promise<SerpGoogleDatasetInfoTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/dataset_info/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2778,7 +2787,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -2810,7 +2819,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2846,7 +2855,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -2878,7 +2887,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2906,13 +2915,13 @@ export class SerpApi {
     }
     googleAdsAdvertisersTaskGetAdvanced(id: string): Promise<SerpGoogleAdsAdvertisersTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/ads_advertisers/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2945,7 +2954,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2981,7 +2990,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -3013,7 +3022,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3041,13 +3050,13 @@ export class SerpApi {
     }
     googleAdsSearchTaskGetAdvanced(id: string): Promise<SerpGoogleAdsSearchTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/ads_search/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3080,7 +3089,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3108,13 +3117,13 @@ export class SerpApi {
     }
     bingLocationsCountry(country: string): Promise<SerpBingLocationsCountryResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/bing/locations/{country}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{country}", encodeURIComponent("" + country));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3147,7 +3156,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3183,7 +3192,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -3215,7 +3224,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3248,7 +3257,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3276,13 +3285,13 @@ export class SerpApi {
     }
     bingOrganicTaskGetRegular(id: string): Promise<SerpBingOrganicTaskGetRegularResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/bing/organic/task_get/regular/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3310,13 +3319,13 @@ export class SerpApi {
     }
     bingOrganicTaskGetAdvanced(id: string): Promise<SerpBingOrganicTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/bing/organic/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3344,13 +3353,13 @@ export class SerpApi {
     }
     bingOrganicTaskGetHtml(id: string): Promise<SerpBingOrganicTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/bing/organic/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3386,7 +3395,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -3421,7 +3430,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -3456,7 +3465,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -3488,7 +3497,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3516,13 +3525,13 @@ export class SerpApi {
     }
     youtubeLocationsCountry(country: string): Promise<SerpYoutubeLocationsCountryResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/youtube/locations/{country}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{country}", encodeURIComponent("" + country));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3555,7 +3564,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3591,7 +3600,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -3623,7 +3632,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3656,7 +3665,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3684,13 +3693,13 @@ export class SerpApi {
     }
     youtubeVideoInfoTaskGetAdvanced(id: string): Promise<SerpYoutubeVideoInfoTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/youtube/video_info/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3726,7 +3735,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -3761,7 +3770,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -3793,7 +3802,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3826,7 +3835,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3854,13 +3863,13 @@ export class SerpApi {
     }
     youtubeOrganicTaskGetAdvanced(id: string): Promise<SerpYoutubeOrganicTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/youtube/organic/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3896,7 +3905,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -3931,7 +3940,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -3963,7 +3972,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -3996,7 +4005,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4024,13 +4033,13 @@ export class SerpApi {
     }
     youtubeVideoSubtitlesTaskGetAdvanced(id: string): Promise<SerpYoutubeVideoSubtitlesTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/youtube/video_subtitles/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4066,7 +4075,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -4101,7 +4110,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -4133,7 +4142,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4166,7 +4175,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4194,13 +4203,13 @@ export class SerpApi {
     }
     youtubeVideoCommentsTaskGetAdvanced(id: string): Promise<SerpYoutubeVideoCommentsTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/youtube/video_comments/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4236,7 +4245,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -4268,7 +4277,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4296,13 +4305,13 @@ export class SerpApi {
     }
     yahooLocationsCountry(country: string): Promise<SerpYahooLocationsCountryResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/yahoo/locations/{country}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{country}", encodeURIComponent("" + country));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4335,7 +4344,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4371,7 +4380,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -4403,7 +4412,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4436,7 +4445,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4464,13 +4473,13 @@ export class SerpApi {
     }
     yahooOrganicTaskGetRegular(id: string): Promise<SerpYahooOrganicTaskGetRegularResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/yahoo/organic/task_get/regular/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4498,13 +4507,13 @@ export class SerpApi {
     }
     yahooOrganicTaskGetAdvanced(id: string): Promise<SerpYahooOrganicTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/yahoo/organic/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4532,13 +4541,13 @@ export class SerpApi {
     }
     yahooOrganicTaskGetHtml(id: string): Promise<SerpYahooOrganicTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/yahoo/organic/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4574,7 +4583,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -4609,7 +4618,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -4644,7 +4653,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -4676,7 +4685,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4704,13 +4713,13 @@ export class SerpApi {
     }
     baiduLocationsCountry(country: string): Promise<SerpBaiduLocationsCountryResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/baidu/locations/{country}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{country}", encodeURIComponent("" + country));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4743,7 +4752,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4779,7 +4788,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -4811,7 +4820,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4844,7 +4853,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4872,13 +4881,13 @@ export class SerpApi {
     }
     baiduOrganicTaskGetRegular(id: string): Promise<SerpBaiduOrganicTaskGetRegularResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/baidu/organic/task_get/regular/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4906,13 +4915,13 @@ export class SerpApi {
     }
     baiduOrganicTaskGetAdvanced(id: string): Promise<SerpBaiduOrganicTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/baidu/organic/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4940,13 +4949,13 @@ export class SerpApi {
     }
     baiduOrganicTaskGetHtml(id: string): Promise<SerpBaiduOrganicTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/baidu/organic/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -4982,7 +4991,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -5014,7 +5023,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5047,7 +5056,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5075,13 +5084,13 @@ export class SerpApi {
     }
     naverOrganicTaskGetRegular(id: string): Promise<SerpNaverOrganicTaskGetRegularResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/naver/organic/task_get/regular/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5109,13 +5118,13 @@ export class SerpApi {
     }
     naverOrganicTaskGetAdvanced(id: string): Promise<SerpNaverOrganicTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/naver/organic/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5143,13 +5152,13 @@ export class SerpApi {
     }
     naverOrganicTaskGetHtml(id: string): Promise<SerpNaverOrganicTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/naver/organic/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5182,7 +5191,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5210,13 +5219,13 @@ export class SerpApi {
     }
     seznamLocationsCountry(country: string): Promise<SerpSeznamLocationsCountryResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/seznam/locations/{country}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{country}", encodeURIComponent("" + country));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5249,7 +5258,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5285,7 +5294,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -5317,7 +5326,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5350,7 +5359,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5378,13 +5387,13 @@ export class SerpApi {
     }
     seznamOrganicTaskGetRegular(id: string): Promise<SerpSeznamOrganicTaskGetRegularResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/seznam/organic/task_get/regular/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5412,13 +5421,13 @@ export class SerpApi {
     }
     seznamOrganicTaskGetAdvanced(id: string): Promise<SerpSeznamOrganicTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/seznam/organic/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5446,13 +5455,13 @@ export class SerpApi {
     }
     seznamOrganicTaskGetHtml(id: string): Promise<SerpSeznamOrganicTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/seznam/organic/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5488,7 +5497,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -5520,7 +5529,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5548,13 +5557,13 @@ export class SerpApi {
     }
     googleFinanceExploreTaskGetAdvanced(id: string): Promise<SerpGoogleFinanceExploreTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/finance_explore/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5582,13 +5591,13 @@ export class SerpApi {
     }
     googleFinanceExploreTaskGetHtml(id: string): Promise<SerpGoogleFinanceExploreTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/finance_explore/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5624,7 +5633,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -5659,7 +5668,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -5694,7 +5703,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -5726,7 +5735,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5754,13 +5763,13 @@ export class SerpApi {
     }
     googleFinanceMarketsTaskGetAdvanced(id: string): Promise<SerpGoogleFinanceMarketsTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/finance_markets/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5788,13 +5797,13 @@ export class SerpApi {
     }
     googleFinanceMarketsTaskGetHtml(id: string): Promise<SerpGoogleFinanceMarketsTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/finance_markets/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5830,7 +5839,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -5865,7 +5874,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -5900,7 +5909,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -5932,7 +5941,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5960,13 +5969,13 @@ export class SerpApi {
     }
     googleFinanceQuoteTaskGetAdvanced(id: string): Promise<SerpGoogleFinanceQuoteTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/finance_quote/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -5994,13 +6003,13 @@ export class SerpApi {
     }
     googleFinanceQuoteTaskGetHtml(id: string): Promise<SerpGoogleFinanceQuoteTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/finance_quote/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -6036,7 +6045,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -6071,7 +6080,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -6106,7 +6115,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -6138,7 +6147,7 @@ export class SerpApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -6166,13 +6175,13 @@ export class SerpApi {
     }
     googleFinanceTickerSearchTaskGetAdvanced(id: string): Promise<SerpGoogleFinanceTickerSearchTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/serp/google/finance_ticker_search/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -6208,7 +6217,7 @@ export class SerpApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {

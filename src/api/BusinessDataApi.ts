@@ -93,7 +93,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -128,7 +128,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -160,7 +160,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -193,7 +193,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -226,7 +226,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -262,7 +262,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -297,7 +297,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -329,7 +329,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -357,13 +357,13 @@ export class BusinessDataApi {
     }
     businessDataGoogleLocationsCountry(country: string): Promise<BusinessDataGoogleLocationsCountryResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/business_data/google/locations/{country}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{country}", encodeURIComponent("" + country));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -396,7 +396,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -432,7 +432,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -464,7 +464,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -497,7 +497,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -525,13 +525,13 @@ export class BusinessDataApi {
     }
     googleMyBusinessInfoTaskGet(id: string): Promise<BusinessDataGoogleMyBusinessInfoTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/business_data/google/my_business_info/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -567,7 +567,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -602,7 +602,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -634,7 +634,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -662,13 +662,13 @@ export class BusinessDataApi {
     }
     googleMyBusinessUpdatesTaskGet(id: string): Promise<BusinessDataGoogleMyBusinessUpdatesTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/business_data/google/my_business_updates/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -704,7 +704,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -736,7 +736,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -764,13 +764,13 @@ export class BusinessDataApi {
     }
     googleHotelSearchesTaskGet(id: string): Promise<BusinessDataGoogleHotelSearchesTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/business_data/google/hotel_searches/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -806,7 +806,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -841,7 +841,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -873,7 +873,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -901,13 +901,13 @@ export class BusinessDataApi {
     }
     googleHotelInfoTaskGetAdvanced(id: string): Promise<BusinessDataGoogleHotelInfoTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/business_data/google/hotel_info/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -935,13 +935,13 @@ export class BusinessDataApi {
     }
     googleHotelInfoTaskGetHtml(id: string): Promise<BusinessDataGoogleHotelInfoTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/business_data/google/hotel_info/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -977,7 +977,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1012,7 +1012,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1047,7 +1047,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1079,7 +1079,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1107,13 +1107,13 @@ export class BusinessDataApi {
     }
     googleReviewsTaskGet(id: string): Promise<BusinessDataGoogleReviewsTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/business_data/google/reviews/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1149,7 +1149,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1181,7 +1181,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1209,13 +1209,13 @@ export class BusinessDataApi {
     }
     googleExtendedReviewsTaskGet(id: string): Promise<BusinessDataGoogleExtendedReviewsTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/business_data/google/extended_reviews/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1251,7 +1251,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1283,7 +1283,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1311,13 +1311,13 @@ export class BusinessDataApi {
     }
     googleQuestionsAndAnswersTaskGet(id: string): Promise<BusinessDataGoogleQuestionsAndAnswersTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/business_data/google/questions_and_answers/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1353,7 +1353,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1388,7 +1388,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1420,7 +1420,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1448,13 +1448,13 @@ export class BusinessDataApi {
     }
     trustpilotSearchTaskGet(id: string): Promise<BusinessDataTrustpilotSearchTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/business_data/trustpilot/search/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1490,7 +1490,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1522,7 +1522,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1550,13 +1550,13 @@ export class BusinessDataApi {
     }
     trustpilotReviewsTaskGet(id: string): Promise<BusinessDataTrustpilotReviewsTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/business_data/trustpilot/reviews/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1589,7 +1589,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1617,13 +1617,13 @@ export class BusinessDataApi {
     }
     tripadvisorLocationsCountry(country: string): Promise<BusinessDataTripadvisorLocationsCountryResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/business_data/tripadvisor/locations/{country}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{country}", encodeURIComponent("" + country));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1656,7 +1656,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1692,7 +1692,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1724,7 +1724,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1752,13 +1752,13 @@ export class BusinessDataApi {
     }
     tripadvisorSearchTaskGet(id: string): Promise<BusinessDataTripadvisorSearchTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/business_data/tripadvisor/search/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1794,7 +1794,7 @@ export class BusinessDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1826,7 +1826,7 @@ export class BusinessDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1854,13 +1854,13 @@ export class BusinessDataApi {
     }
     tripadvisorReviewsTaskGet(id: string): Promise<BusinessDataTripadvisorReviewsTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/business_data/tripadvisor/reviews/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 

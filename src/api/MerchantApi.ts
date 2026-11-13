@@ -72,7 +72,7 @@ export class MerchantApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -107,7 +107,7 @@ export class MerchantApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -139,7 +139,7 @@ export class MerchantApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -172,7 +172,7 @@ export class MerchantApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -200,13 +200,13 @@ export class MerchantApi {
     }
     merchantGoogleLocationsCountry(country: string): Promise<MerchantGoogleLocationsCountryResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/merchant/google/locations/{country}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{country}", encodeURIComponent("" + country));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -242,7 +242,7 @@ export class MerchantApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -274,7 +274,7 @@ export class MerchantApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -307,7 +307,7 @@ export class MerchantApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -335,13 +335,13 @@ export class MerchantApi {
     }
     googleProductsTaskGetAdvanced(id: string): Promise<MerchantGoogleProductsTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/merchant/google/products/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -369,13 +369,13 @@ export class MerchantApi {
     }
     googleProductsTaskGetHtml(id: string): Promise<MerchantGoogleProductsTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/merchant/google/products/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -411,7 +411,7 @@ export class MerchantApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -443,7 +443,7 @@ export class MerchantApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -471,13 +471,13 @@ export class MerchantApi {
     }
     googleSellersTaskGetAdvanced(id: string): Promise<MerchantGoogleSellersTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/merchant/google/sellers/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -513,7 +513,7 @@ export class MerchantApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -545,7 +545,7 @@ export class MerchantApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -573,13 +573,13 @@ export class MerchantApi {
     }
     googleProductInfoTaskGetAdvanced(id: string): Promise<MerchantGoogleProductInfoTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/merchant/google/product_info/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -607,13 +607,13 @@ export class MerchantApi {
     }
     googleSellersAdUrl(shop_ad_aclk: string): Promise<MerchantGoogleSellersAdUrlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/merchant/google/sellers/ad_url/{shop_ad_aclk}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{shop_ad_aclk}", encodeURIComponent("" + shop_ad_aclk));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -646,7 +646,7 @@ export class MerchantApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -674,13 +674,13 @@ export class MerchantApi {
     }
     amazonLocationsCountry(country: string): Promise<MerchantAmazonLocationsCountryResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/merchant/amazon/locations/{country}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{country}", encodeURIComponent("" + country));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -713,7 +713,7 @@ export class MerchantApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -749,7 +749,7 @@ export class MerchantApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -781,7 +781,7 @@ export class MerchantApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -809,13 +809,13 @@ export class MerchantApi {
     }
     amazonProductsTaskGetAdvanced(id: string): Promise<MerchantAmazonProductsTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/merchant/amazon/products/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -851,7 +851,7 @@ export class MerchantApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -878,13 +878,13 @@ export class MerchantApi {
     }
     amazonProductsTaskGetHtml(id: string): Promise<MerchantAmazonProductsTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/merchant/amazon/products/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -920,7 +920,7 @@ export class MerchantApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -955,7 +955,7 @@ export class MerchantApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -987,7 +987,7 @@ export class MerchantApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1015,13 +1015,13 @@ export class MerchantApi {
     }
     amazonAsinTaskGetAdvanced(id: string): Promise<MerchantAmazonAsinTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/merchant/amazon/asin/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1057,7 +1057,7 @@ export class MerchantApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1084,13 +1084,13 @@ export class MerchantApi {
     }
     amazonAsinTaskGetHtml(id: string): Promise<MerchantAmazonAsinTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/merchant/amazon/asin/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1126,7 +1126,7 @@ export class MerchantApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1161,7 +1161,7 @@ export class MerchantApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1193,7 +1193,7 @@ export class MerchantApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1221,13 +1221,13 @@ export class MerchantApi {
     }
     amazonSellersTaskGetAdvanced(id: string): Promise<MerchantAmazonSellersTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/merchant/amazon/sellers/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1263,7 +1263,7 @@ export class MerchantApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1290,13 +1290,13 @@ export class MerchantApi {
     }
     amazonSellersTaskGetHtml(id: string): Promise<MerchantAmazonSellersTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/merchant/amazon/sellers/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1332,7 +1332,7 @@ export class MerchantApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {

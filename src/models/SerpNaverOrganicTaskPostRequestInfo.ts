@@ -1,6 +1,3 @@
-import { SerpApiStopCrawlOnMatchInfo, ISerpApiStopCrawlOnMatchInfo } from "./SerpApiStopCrawlOnMatchInfo";
-
-
 export interface ISerpNaverOrganicTaskPostRequestInfo   {
         
         /** *keyword* **required field** you can specify **up to 700 characters** in the `keyword` field all %## will be decoded (plus character ‘+’ will be decoded to a space character) if you need to use the “%” character for your `keyword`, please specify it as “%25”; if you need to use the “+” character for your `keyword`, please specify it as “%2B” learn more about rules and limitations of `keyword` and `keywords` fields in DataForSEO APIs in this [Help Center article](https://dataforseo.com/help-center/rules-and-limitations-of-keyword-and-keywords-fields-in-dataforseo-apis) */
@@ -29,9 +26,6 @@ export interface ISerpNaverOrganicTaskPostRequestInfo   {
         
         /** *additional parameters of the search query* optional field [get the list of available parameters and additional details here](https://dataforseo.com/what-are-google-search-parameters-and-how-to-use-them-with-serp-api.html) */
         search_param?: string | undefined
-        
-        /** array of targets to stop crawling optional field if specified, the response will contain SERP results up to and including the specified match_value; you can specify up to 10 target values in this array example: 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}] learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api Your account will be billed per each SERP crawled through the specified targets */
-        stop_crawl_on_match?: SerpApiStopCrawlOnMatchInfo[] | undefined
         
         /** *user-defined task identifier* optional field *the character limit is 255* you can use this parameter to identify the task and match it with the result you will find the specified `tag` value in the `data` object of the response */
         tag?: string | undefined
@@ -97,11 +91,6 @@ export class SerpNaverOrganicTaskPostRequestInfo  implements ISerpNaverOrganicTa
     search_param?: string | undefined;
 
     
-    /** array of targets to stop crawling optional field if specified, the response will contain SERP results up to and including the specified match_value; you can specify up to 10 target values in this array example: 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}] learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api Your account will be billed per each SERP crawled through the specified targets */
-
-    stop_crawl_on_match?: SerpApiStopCrawlOnMatchInfo[] | undefined;
-
-    
     /** *user-defined task identifier* optional field *the character limit is 255* you can use this parameter to identify the task and match it with the result you will find the specified `tag` value in the `data` object of the response */
 
     tag?: string | undefined;
@@ -150,12 +139,6 @@ export class SerpNaverOrganicTaskPostRequestInfo  implements ISerpNaverOrganicTa
             this.os = data["os"];
             this.se_domain = data["se_domain"];
             this.search_param = data["search_param"];
-            if (Array.isArray(data["stop_crawl_on_match"])) {
-                this.stop_crawl_on_match = [];
-                for (let item of data["stop_crawl_on_match"]) {
-                    this.stop_crawl_on_match.push(SerpApiStopCrawlOnMatchInfo.fromJS(item));
-                }
-            }
             this.tag = data["tag"];
             this.postback_url = data["postback_url"];
             this.postback_data = data["postback_data"];
@@ -186,15 +169,6 @@ export class SerpNaverOrganicTaskPostRequestInfo  implements ISerpNaverOrganicTa
         data["os"] = this.os;
         data["se_domain"] = this.se_domain;
         data["search_param"] = this.search_param;
-        data["stop_crawl_on_match"] = null;
-        if (Array.isArray(this.stop_crawl_on_match)) {
-            data["stop_crawl_on_match"] = [];
-            for (let item of this.stop_crawl_on_match) {
-                if (item && typeof item.toJSON === "function") {
-                    data["stop_crawl_on_match"].push(item?.toJSON());
-                }
-            }
-        }
         data["tag"] = this.tag;
         data["postback_url"] = this.postback_url;
         data["postback_data"] = this.postback_data;

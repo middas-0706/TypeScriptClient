@@ -12,8 +12,11 @@ export interface ISerpGoogleNewsTaskPostRequestInfo   {
         /** *parsing depth* optional field number of results in SERP default value: `10` max value: `700` **Your account will be billed per each SERP containing up to 10 results;** Setting depth above 10 may result in additional charges if the search engine returns more than 10 results; If the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically; The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-news-serp-api) page. */
         depth?: number | undefined
         
-        /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-news-serp-api) page. */
+        /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-news-serp-api) page */
         priority?: number | undefined
+        
+        /** *resolve goto redirect URLs* optional field set to `true` to resolve goto redirect URLs in SERPs for tasks with high execution priority default value for tasks with `priority: 1` is `true` default value for tasks with `priority: 2` is `false` **Note:** this parameter adds up to 40 seconds to the turnaround time of high-priority tasks, with a maximum turnaround time of 260 seconds */
+        resolve_goto_urls?: boolean | undefined
         
         /** *notification URL of a completed task* optional field when a task is completed we will notify you by GET request sent to the URL you have specified you can use the ‘$id’ string as a `$id` variable and ‘$tag’ as urlencoded `$tag` variable. We will set the necessary values before sending the request. example: `http://your-server.com/pingscript?id=$id` `http://your-server.com/pingscript?id=$id&tag=$tag` **Note:** special characters in `pingback_url` will be urlencoded; i.a., the `#` character will be encoded into `%23` learn more on our [Help Center](https://dataforseo.com/help-center/pingbacks-postbacks-with-dataforseo-api) */
         pingback_url?: string | undefined
@@ -90,9 +93,14 @@ export class SerpGoogleNewsTaskPostRequestInfo  implements ISerpGoogleNewsTaskPo
     depth?: number | undefined;
 
     
-    /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-news-serp-api) page. */
+    /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-news-serp-api) page */
 
     priority?: number | undefined;
+
+    
+    /** *resolve goto redirect URLs* optional field set to `true` to resolve goto redirect URLs in SERPs for tasks with high execution priority default value for tasks with `priority: 1` is `true` default value for tasks with `priority: 2` is `false` **Note:** this parameter adds up to 40 seconds to the turnaround time of high-priority tasks, with a maximum turnaround time of 260 seconds */
+
+    resolve_goto_urls?: boolean | undefined;
 
     
     /** *notification URL of a completed task* optional field when a task is completed we will notify you by GET request sent to the URL you have specified you can use the ‘$id’ string as a `$id` variable and ‘$tag’ as urlencoded `$tag` variable. We will set the necessary values before sending the request. example: `http://your-server.com/pingscript?id=$id` `http://your-server.com/pingscript?id=$id&tag=$tag` **Note:** special characters in `pingback_url` will be urlencoded; i.a., the `#` character will be encoded into `%23` learn more on our [Help Center](https://dataforseo.com/help-center/pingbacks-postbacks-with-dataforseo-api) */
@@ -199,6 +207,7 @@ export class SerpGoogleNewsTaskPostRequestInfo  implements ISerpGoogleNewsTaskPo
             this.language_code = data["language_code"];
             this.depth = data["depth"];
             this.priority = data["priority"];
+            this.resolve_goto_urls = data["resolve_goto_urls"];
             this.pingback_url = data["pingback_url"];
             this.postback_url = data["postback_url"];
             this.postback_data = data["postback_data"];
@@ -237,6 +246,7 @@ export class SerpGoogleNewsTaskPostRequestInfo  implements ISerpGoogleNewsTaskPo
         data["language_code"] = this.language_code;
         data["depth"] = this.depth;
         data["priority"] = this.priority;
+        data["resolve_goto_urls"] = this.resolve_goto_urls;
         data["pingback_url"] = this.pingback_url;
         data["postback_url"] = this.postback_url;
         data["postback_data"] = this.postback_data;

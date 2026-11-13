@@ -67,7 +67,7 @@ export interface IBacklinksDomainIntersection   {
         referring_links_semantic_locations?: { [key: string]: number; } | undefined
         
         /** *ISO country codes of the referring links* indicates ISO country codes of the domains where the referring links are located and the link count per each country */
-        referring_links_countries?: { [key: string]: number; } | undefined
+        referring_links_countries?: any | undefined
 
     [key: string]: any;
 
@@ -188,7 +188,7 @@ export class BacklinksDomainIntersection  implements IBacklinksDomainIntersectio
     
     /** *ISO country codes of the referring links* indicates ISO country codes of the domains where the referring links are located and the link count per each country */
 
-    referring_links_countries?: { [key: string]: number; } | undefined;
+    referring_links_countries?: any | undefined;
 
     [key: string]: any;
 

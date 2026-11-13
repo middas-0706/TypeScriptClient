@@ -1,6 +1,3 @@
-import { SerpApiStopCrawlOnMatchInfo, ISerpApiStopCrawlOnMatchInfo } from "./SerpApiStopCrawlOnMatchInfo";
-
-
 export interface ISerpYahooOrganicLiveHtmlRequestInfo   {
         
         /** *direct URL of the search query* optional field you can specify a direct URL and we will sort it out to the necessary fields. Note that this method is the most difficult for our API to process and also requires you to specify the exact language and location in the URL. In most cases, we wouldn’t recommend using this method. example: `https://search.yahoo.com/search?p=rank+checker&n=100&vl=lang_en&vc=us&ei=UTF-8` */
@@ -41,9 +38,6 @@ export interface ISerpYahooOrganicLiveHtmlRequestInfo   {
         
         /** *additional parameters of the search query* optional field [get the list of available parameters and additional details here](https://dataforseo.com/what-are-google-search-parameters-and-how-to-use-them-with-serp-api.html) */
         search_param?: string | undefined
-        
-        /** array of targets to stop crawling optional field if specified, the response will contain SERP results up to and including the specified match_value; you can specify up to 10 target values in this array example: 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}] learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api Your account will be billed per each SERP crawled through the specified targets */
-        stop_crawl_on_match?: SerpApiStopCrawlOnMatchInfo[] | undefined
 
     [key: string]: any;
 
@@ -116,11 +110,6 @@ export class SerpYahooOrganicLiveHtmlRequestInfo  implements ISerpYahooOrganicLi
 
     search_param?: string | undefined;
 
-    
-    /** array of targets to stop crawling optional field if specified, the response will contain SERP results up to and including the specified match_value; you can specify up to 10 target values in this array example: 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}] learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api Your account will be billed per each SERP crawled through the specified targets */
-
-    stop_crawl_on_match?: SerpApiStopCrawlOnMatchInfo[] | undefined;
-
     [key: string]: any;
 
 
@@ -154,12 +143,6 @@ export class SerpYahooOrganicLiveHtmlRequestInfo  implements ISerpYahooOrganicLi
             this.depth = data["depth"];
             this.max_crawl_pages = data["max_crawl_pages"];
             this.search_param = data["search_param"];
-            if (Array.isArray(data["stop_crawl_on_match"])) {
-                this.stop_crawl_on_match = [];
-                for (let item of data["stop_crawl_on_match"]) {
-                    this.stop_crawl_on_match.push(SerpApiStopCrawlOnMatchInfo.fromJS(item));
-                }
-            }
         }
     }
 
@@ -190,15 +173,6 @@ export class SerpYahooOrganicLiveHtmlRequestInfo  implements ISerpYahooOrganicLi
         data["depth"] = this.depth;
         data["max_crawl_pages"] = this.max_crawl_pages;
         data["search_param"] = this.search_param;
-        data["stop_crawl_on_match"] = null;
-        if (Array.isArray(this.stop_crawl_on_match)) {
-            data["stop_crawl_on_match"] = [];
-            for (let item of this.stop_crawl_on_match) {
-                if (item && typeof item.toJSON === "function") {
-                    data["stop_crawl_on_match"].push(item?.toJSON());
-                }
-            }
-        }
         return data;
     }
 }

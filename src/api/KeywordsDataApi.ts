@@ -121,7 +121,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -156,7 +156,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -188,7 +188,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -221,7 +221,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -249,13 +249,13 @@ export class KeywordsDataApi {
     }
     googleAdsLocationsCountry(country: string): Promise<KeywordsDataGoogleAdsLocationsCountryResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/keywords_data/google_ads/locations/{country}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{country}", encodeURIComponent("" + country));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -288,7 +288,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -324,7 +324,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -356,7 +356,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -384,13 +384,13 @@ export class KeywordsDataApi {
     }
     googleAdsSearchVolumeTaskGet(id: string): Promise<KeywordsDataGoogleAdsSearchVolumeTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/keywords_data/google_ads/search_volume/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -426,7 +426,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -461,7 +461,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -493,7 +493,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -521,13 +521,13 @@ export class KeywordsDataApi {
     }
     googleAdsKeywordsForSiteTaskGet(id: string): Promise<KeywordsDataGoogleAdsKeywordsForSiteTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/keywords_data/google_ads/keywords_for_site/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -563,7 +563,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -598,7 +598,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -630,7 +630,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -658,13 +658,13 @@ export class KeywordsDataApi {
     }
     googleAdsKeywordsForKeywordsTaskGet(id: string): Promise<KeywordsDataGoogleAdsKeywordsForKeywordsTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/keywords_data/google_ads/keywords_for_keywords/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -700,7 +700,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -735,7 +735,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -767,7 +767,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -795,13 +795,13 @@ export class KeywordsDataApi {
     }
     googleAdsAdTrafficByKeywordsTaskGet(id: string): Promise<KeywordsDataGoogleAdsAdTrafficByKeywordsTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/keywords_data/google_ads/ad_traffic_by_keywords/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -837,7 +837,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -869,7 +869,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -897,13 +897,13 @@ export class KeywordsDataApi {
     }
     googleTrendsLocationsCountry(country: string): Promise<KeywordsDataGoogleTrendsLocationsCountryResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/keywords_data/google_trends/locations/{country}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{country}", encodeURIComponent("" + country));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -936,7 +936,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -969,7 +969,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1005,7 +1005,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1037,7 +1037,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1065,13 +1065,13 @@ export class KeywordsDataApi {
     }
     googleTrendsExploreTaskGet(id: string): Promise<KeywordsDataGoogleTrendsExploreTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/keywords_data/google_trends/explore/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1107,7 +1107,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1139,7 +1139,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1167,13 +1167,13 @@ export class KeywordsDataApi {
     }
     dataforseoTrendsLocationsCountry(country: string): Promise<KeywordsDataDataforseoTrendsLocationsCountryResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/keywords_data/dataforseo_trends/locations/{country}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{country}", encodeURIComponent("" + country));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1209,7 +1209,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1244,7 +1244,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1279,7 +1279,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1314,7 +1314,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1346,7 +1346,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1379,7 +1379,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1415,7 +1415,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1447,7 +1447,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1475,13 +1475,13 @@ export class KeywordsDataApi {
     }
     bingSearchVolumeTaskGet(id: string): Promise<KeywordsDataBingSearchVolumeTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/keywords_data/bing/search_volume/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1517,7 +1517,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1549,7 +1549,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1582,7 +1582,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1618,7 +1618,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1650,7 +1650,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1678,13 +1678,13 @@ export class KeywordsDataApi {
     }
     bingAudienceEstimationTaskGet(id: string): Promise<KeywordsDataBingAudienceEstimationTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/keywords_data/bing/audience_estimation/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1720,7 +1720,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1755,7 +1755,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1787,7 +1787,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1815,13 +1815,13 @@ export class KeywordsDataApi {
     }
     bingKeywordsForSiteTaskGet(id: string): Promise<KeywordsDataBingKeywordsForSiteTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/keywords_data/bing/keywords_for_site/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1857,7 +1857,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1892,7 +1892,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1924,7 +1924,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1952,13 +1952,13 @@ export class KeywordsDataApi {
     }
     bingKeywordsForKeywordsTaskGet(id: string): Promise<KeywordsDataBingKeywordsForKeywordsTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/keywords_data/bing/keywords_for_keywords/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1994,7 +1994,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -2026,7 +2026,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2062,7 +2062,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -2094,7 +2094,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2122,13 +2122,13 @@ export class KeywordsDataApi {
     }
     bingKeywordPerformanceTaskGet(id: string): Promise<KeywordsDataBingKeywordPerformanceTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/keywords_data/bing/keyword_performance/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2164,7 +2164,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -2196,7 +2196,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2232,7 +2232,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -2264,7 +2264,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2292,13 +2292,13 @@ export class KeywordsDataApi {
     }
     bingSearchVolumeHistoryTaskGet(id: string): Promise<KeywordsDataBingSearchVolumeHistoryTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/keywords_data/bing/search_volume_history/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2334,7 +2334,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -2366,7 +2366,7 @@ export class KeywordsDataApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -2402,7 +2402,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -2437,7 +2437,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -2472,7 +2472,7 @@ export class KeywordsDataApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {

@@ -12,6 +12,9 @@ export interface ISerpGoogleLocalFinderLiveAdvancedRequestInfo   {
         /** *parsing depth* optional field number of results in SERP default value: `10` max value: `100` **Your account will be billed per each SERP containing up to 10 results;** Setting depth above 10 may result in additional charges if the search engine returns more than 10 results respectively; If the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-local-finder-serp-api) page. */
         depth?: number | undefined
         
+        /** *resolve goto redirect URLs* optional field set to `true` to resolve goto redirect URLs in SERPs default value: `false` **Note:** this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds */
+        resolve_goto_urls?: boolean | undefined
+        
         /** *device type* optional field return results for a specific device type can take the values:`desktop`, `mobile` default value: `desktop` */
         device?: string | undefined
         
@@ -26,9 +29,6 @@ export interface ISerpGoogleLocalFinderLiveAdvancedRequestInfo   {
         
         /** *user-defined task identifier* optional field *the character limit is 255* you can use this parameter to identify the task and match it with the result you will find the specified `tag` value in the `data` object of the response */
         tag?: string | undefined
-        
-        /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-local-finder-serp-api) page. */
-        priority?: number | undefined
         
         /** *GPS coordinates of a location* **required field if you don't specify** `location_name` or `location_code` **if you use this field, you don't need to specify `location_name` or `location_code`** `location_coordinate` parameter should be specified in the *'latitude,longitude,zoom'* format if *'zoom'* is not specified, *9z* will be applied as a default value the maximum number of decimal digits for *'latitude'* and *'longitude'*: 7 the minimum value for *'zoom'*: 4z the maximum value for *'zoom'*: 18z example: `52.6178549,-155.352142,20z` */
         location_coordinate?: string | undefined
@@ -60,6 +60,11 @@ export class SerpGoogleLocalFinderLiveAdvancedRequestInfo  implements ISerpGoogl
     depth?: number | undefined;
 
     
+    /** *resolve goto redirect URLs* optional field set to `true` to resolve goto redirect URLs in SERPs default value: `false` **Note:** this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds */
+
+    resolve_goto_urls?: boolean | undefined;
+
+    
     /** *device type* optional field return results for a specific device type can take the values:`desktop`, `mobile` default value: `desktop` */
 
     device?: string | undefined;
@@ -83,11 +88,6 @@ export class SerpGoogleLocalFinderLiveAdvancedRequestInfo  implements ISerpGoogl
     /** *user-defined task identifier* optional field *the character limit is 255* you can use this parameter to identify the task and match it with the result you will find the specified `tag` value in the `data` object of the response */
 
     tag?: string | undefined;
-
-    
-    /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-local-finder-serp-api) page. */
-
-    priority?: number | undefined;
 
     
     /** *GPS coordinates of a location* **required field if you don't specify** `location_name` or `location_code` **if you use this field, you don't need to specify `location_name` or `location_code`** `location_coordinate` parameter should be specified in the *'latitude,longitude,zoom'* format if *'zoom'* is not specified, *9z* will be applied as a default value the maximum number of decimal digits for *'latitude'* and *'longitude'*: 7 the minimum value for *'zoom'*: 4z the maximum value for *'zoom'*: 18z example: `52.6178549,-155.352142,20z` */
@@ -118,12 +118,12 @@ export class SerpGoogleLocalFinderLiveAdvancedRequestInfo  implements ISerpGoogl
             this.location_code = data["location_code"];
             this.language_code = data["language_code"];
             this.depth = data["depth"];
+            this.resolve_goto_urls = data["resolve_goto_urls"];
             this.device = data["device"];
             this.location_name = data["location_name"];
             this.language_name = data["language_name"];
             this.os = data["os"];
             this.tag = data["tag"];
-            this.priority = data["priority"];
             this.location_coordinate = data["location_coordinate"];
         }
     }
@@ -146,12 +146,12 @@ export class SerpGoogleLocalFinderLiveAdvancedRequestInfo  implements ISerpGoogl
         data["location_code"] = this.location_code;
         data["language_code"] = this.language_code;
         data["depth"] = this.depth;
+        data["resolve_goto_urls"] = this.resolve_goto_urls;
         data["device"] = this.device;
         data["location_name"] = this.location_name;
         data["language_name"] = this.language_name;
         data["os"] = this.os;
         data["tag"] = this.tag;
-        data["priority"] = this.priority;
         data["location_coordinate"] = this.location_coordinate;
         return data;
     }

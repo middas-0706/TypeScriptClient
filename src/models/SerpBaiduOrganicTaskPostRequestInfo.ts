@@ -1,6 +1,3 @@
-import { SerpApiStopCrawlOnMatchInfo, ISerpApiStopCrawlOnMatchInfo } from "./SerpApiStopCrawlOnMatchInfo";
-
-
 export interface ISerpBaiduOrganicTaskPostRequestInfo   {
         
         /** *keyword* **required field** you can specify **up to 700 characters** in the `keyword` field all %## will be decoded (plus character ‘+’ will be decoded to a space character) if you need to use the “%” character for your `keyword`, please specify it as “%25”; if you need to use the “+” character for your `keyword`, please specify it as “%2B” learn more about rules and limitations of `keyword` and `keywords` fields in DataForSEO APIs in this [Help Center article](https://dataforseo.com/help-center/rules-and-limitations-of-keyword-and-keywords-fields-in-dataforseo-apis) */
@@ -38,9 +35,6 @@ export interface ISerpBaiduOrganicTaskPostRequestInfo   {
         
         /** *include direct URL for each ranked result* optional field if set to `true`, the returned results will contain direct URLs of the ranked websites by default, the URLs in Baidu results are encoded by the search engine, for example: `http://www.baidu.com/link?url=KQt6LSwU5OHnPtB8210R8flBP40grY6lTPxH_0UO7S2kgiZMTmw3ztV0hCo5c1kL`default value: `false` **Note:** if set to `true`, **the charge per task will be multiplied by 10** as our system runs a separate request for each ranked website to return its direct URL */
         get_website_url?: boolean | undefined
-        
-        /** array of targets to stop crawling optional field if specified, the response will contain SERP results up to and including the specified match_value; you can specify up to 10 target values in this array example: 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}] learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api Your account will be billed per each SERP crawled through the specified targets */
-        stop_crawl_on_match?: SerpApiStopCrawlOnMatchInfo[] | undefined
         
         /** *user-defined task identifier* optional field *the character limit is 255* you can use this parameter to identify the task and match it with the result you will find the specified `tag` value in the `data` object of the response */
         tag?: string | undefined
@@ -121,11 +115,6 @@ export class SerpBaiduOrganicTaskPostRequestInfo  implements ISerpBaiduOrganicTa
     get_website_url?: boolean | undefined;
 
     
-    /** array of targets to stop crawling optional field if specified, the response will contain SERP results up to and including the specified match_value; you can specify up to 10 target values in this array example: 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}] learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api Your account will be billed per each SERP crawled through the specified targets */
-
-    stop_crawl_on_match?: SerpApiStopCrawlOnMatchInfo[] | undefined;
-
-    
     /** *user-defined task identifier* optional field *the character limit is 255* you can use this parameter to identify the task and match it with the result you will find the specified `tag` value in the `data` object of the response */
 
     tag?: string | undefined;
@@ -177,12 +166,6 @@ export class SerpBaiduOrganicTaskPostRequestInfo  implements ISerpBaiduOrganicTa
             this.device = data["device"];
             this.os = data["os"];
             this.get_website_url = data["get_website_url"];
-            if (Array.isArray(data["stop_crawl_on_match"])) {
-                this.stop_crawl_on_match = [];
-                for (let item of data["stop_crawl_on_match"]) {
-                    this.stop_crawl_on_match.push(SerpApiStopCrawlOnMatchInfo.fromJS(item));
-                }
-            }
             this.tag = data["tag"];
             this.postback_url = data["postback_url"];
             this.postback_data = data["postback_data"];
@@ -216,15 +199,6 @@ export class SerpBaiduOrganicTaskPostRequestInfo  implements ISerpBaiduOrganicTa
         data["device"] = this.device;
         data["os"] = this.os;
         data["get_website_url"] = this.get_website_url;
-        data["stop_crawl_on_match"] = null;
-        if (Array.isArray(this.stop_crawl_on_match)) {
-            data["stop_crawl_on_match"] = [];
-            for (let item of this.stop_crawl_on_match) {
-                if (item && typeof item.toJSON === "function") {
-                    data["stop_crawl_on_match"].push(item?.toJSON());
-                }
-            }
-        }
         data["tag"] = this.tag;
         data["postback_url"] = this.postback_url;
         data["postback_data"] = this.postback_data;

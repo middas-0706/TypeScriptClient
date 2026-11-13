@@ -12,8 +12,11 @@ export interface ISerpGoogleLocalFinderTaskPostRequestInfo   {
         /** *parsing depth* optional field number of results in SERP default value: `10` max value: `350` **your account will be billed per each SERP containing up to 10 results;** setting depth above 10 may result in additional charges if the search engine returns more than 10 results respectively; If the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-local-finder-serp-api) page. */
         depth?: number | undefined
         
-        /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-local-finder-serp-api) page. */
+        /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-local-finder-serp-api) page */
         priority?: number | undefined
+        
+        /** *resolve goto redirect URLs* optional field set to `true` to resolve goto redirect URLs in SERPs for tasks with high execution priority default value for tasks with `priority: 1` is `true` default value for tasks with `priority: 2` is `false` **Note:** this parameter adds up to 40 seconds to the turnaround time of high-priority tasks, with a maximum turnaround time of 260 seconds */
+        resolve_goto_urls?: boolean | undefined
         
         /** *device type* optional field return results for a specific device type can take the values:`desktop`, `mobile` default value: `desktop` */
         device?: string | undefined
@@ -69,9 +72,14 @@ export class SerpGoogleLocalFinderTaskPostRequestInfo  implements ISerpGoogleLoc
     depth?: number | undefined;
 
     
-    /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-local-finder-serp-api) page. */
+    /** *task priority* optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-local-finder-serp-api) page */
 
     priority?: number | undefined;
+
+    
+    /** *resolve goto redirect URLs* optional field set to `true` to resolve goto redirect URLs in SERPs for tasks with high execution priority default value for tasks with `priority: 1` is `true` default value for tasks with `priority: 2` is `false` **Note:** this parameter adds up to 40 seconds to the turnaround time of high-priority tasks, with a maximum turnaround time of 260 seconds */
+
+    resolve_goto_urls?: boolean | undefined;
 
     
     /** *device type* optional field return results for a specific device type can take the values:`desktop`, `mobile` default value: `desktop` */
@@ -143,6 +151,7 @@ export class SerpGoogleLocalFinderTaskPostRequestInfo  implements ISerpGoogleLoc
             this.language_code = data["language_code"];
             this.depth = data["depth"];
             this.priority = data["priority"];
+            this.resolve_goto_urls = data["resolve_goto_urls"];
             this.device = data["device"];
             this.pingback_url = data["pingback_url"];
             this.postback_url = data["postback_url"];
@@ -174,6 +183,7 @@ export class SerpGoogleLocalFinderTaskPostRequestInfo  implements ISerpGoogleLoc
         data["language_code"] = this.language_code;
         data["depth"] = this.depth;
         data["priority"] = this.priority;
+        data["resolve_goto_urls"] = this.resolve_goto_urls;
         data["device"] = this.device;
         data["pingback_url"] = this.pingback_url;
         data["postback_url"] = this.postback_url;

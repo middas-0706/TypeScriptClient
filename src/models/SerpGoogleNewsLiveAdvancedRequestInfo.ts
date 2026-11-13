@@ -9,8 +9,11 @@ export interface ISerpGoogleNewsLiveAdvancedRequestInfo   {
         /** *search engine language code* **required field if you don't specify** `language_name` **if you use this field, you don't need to specify `language_name`** you can receive the list of available languages of the search engine with their `language_code` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/languages`**example:**`en` */
         language_code?: string | undefined
         
-        /** *parsing depth* optional field number of results in SERP default value: `10` max value: `200` **Your account will be billed per each SERP containing up to 10 results;** Setting depth above 10 may result in additional charges if the search engine returns more than 10 results; If the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-news-serp-api) page. */
+        /** *parsing depth* optional field number of results in SERP default value: `10` max value: `200` **Your account will be billed per each SERP containing up to 10 results;** Setting depth above 10 may result in additional charges if the search engine returns more than 10 results; If the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-news-serp-api) page */
         depth?: number | undefined
+        
+        /** *resolve goto redirect URLs* optional field set to `true` to resolve goto redirect URLs in SERPs default value: `false` **Note:** this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds */
+        resolve_goto_urls?: boolean | undefined
         
         /** *full name of search engine location* **required field if you don't specify** `location_code` or `location_coordinate` **if you use this field, you don't need to specify `location_code` or `location_coordinate`** you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/locations` example: `London,England,United Kingdom` */
         location_name?: string | undefined
@@ -70,9 +73,14 @@ export class SerpGoogleNewsLiveAdvancedRequestInfo  implements ISerpGoogleNewsLi
     language_code?: string | undefined;
 
     
-    /** *parsing depth* optional field number of results in SERP default value: `10` max value: `200` **Your account will be billed per each SERP containing up to 10 results;** Setting depth above 10 may result in additional charges if the search engine returns more than 10 results; If the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-news-serp-api) page. */
+    /** *parsing depth* optional field number of results in SERP default value: `10` max value: `200` **Your account will be billed per each SERP containing up to 10 results;** Setting depth above 10 may result in additional charges if the search engine returns more than 10 results; If the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-news-serp-api) page */
 
     depth?: number | undefined;
+
+    
+    /** *resolve goto redirect URLs* optional field set to `true` to resolve goto redirect URLs in SERPs default value: `false` **Note:** this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds */
+
+    resolve_goto_urls?: boolean | undefined;
 
     
     /** *full name of search engine location* **required field if you don't specify** `location_code` or `location_coordinate` **if you use this field, you don't need to specify `location_code` or `location_coordinate`** you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/locations` example: `London,England,United Kingdom` */
@@ -158,6 +166,7 @@ export class SerpGoogleNewsLiveAdvancedRequestInfo  implements ISerpGoogleNewsLi
             this.location_code = data["location_code"];
             this.language_code = data["language_code"];
             this.depth = data["depth"];
+            this.resolve_goto_urls = data["resolve_goto_urls"];
             this.location_name = data["location_name"];
             this.language_name = data["language_name"];
             this.os = data["os"];
@@ -191,6 +200,7 @@ export class SerpGoogleNewsLiveAdvancedRequestInfo  implements ISerpGoogleNewsLi
         data["location_code"] = this.location_code;
         data["language_code"] = this.language_code;
         data["depth"] = this.depth;
+        data["resolve_goto_urls"] = this.resolve_goto_urls;
         data["location_name"] = this.location_name;
         data["language_name"] = this.language_name;
         data["os"] = this.os;

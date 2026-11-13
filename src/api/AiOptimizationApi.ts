@@ -103,7 +103,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -131,13 +131,13 @@ export class AiOptimizationApi {
     }
     chatGptLlmScraperLocationsCountry(country: string): Promise<AiOptimizationChatGptLlmScraperLocationsCountryResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/ai_optimization/chat_gpt/llm_scraper/locations/{country}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{country}", encodeURIComponent("" + country));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -170,7 +170,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -206,7 +206,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -238,7 +238,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -266,13 +266,13 @@ export class AiOptimizationApi {
     }
     chatGptLlmScraperTaskGetAdvanced(id: string): Promise<AiOptimizationChatGptLlmScraperTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/ai_optimization/chat_gpt/llm_scraper/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -300,13 +300,13 @@ export class AiOptimizationApi {
     }
     chatGptLlmScraperTaskGetHtml(id: string): Promise<AiOptimizationChatGptLlmScraperTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/ai_optimization/chat_gpt/llm_scraper/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -342,7 +342,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -377,7 +377,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -409,7 +409,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -445,7 +445,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -480,7 +480,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -512,7 +512,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -540,13 +540,13 @@ export class AiOptimizationApi {
     }
     chatGptLlmResponsesTaskGet(id: string): Promise<AiOptimizationChatGptLlmResponsesTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/ai_optimization/chat_gpt/llm_responses/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -579,7 +579,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -615,7 +615,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -650,7 +650,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -682,7 +682,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -710,13 +710,13 @@ export class AiOptimizationApi {
     }
     claudeLlmResponsesTaskGet(id: string): Promise<AiOptimizationClaudeLlmResponsesTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/ai_optimization/claude/llm_responses/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -749,7 +749,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -785,7 +785,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -817,7 +817,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -845,13 +845,13 @@ export class AiOptimizationApi {
     }
     geminiLlmResponsesTaskGet(id: string): Promise<AiOptimizationGeminiLlmResponsesTaskGetResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/ai_optimization/gemini/llm_responses/task_get/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -887,7 +887,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -919,7 +919,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -955,7 +955,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -987,7 +987,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1020,7 +1020,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1056,7 +1056,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1088,7 +1088,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1116,13 +1116,13 @@ export class AiOptimizationApi {
     }
     geminiLlmScraperTaskGetAdvanced(id: string): Promise<AiOptimizationGeminiLlmScraperTaskGetAdvancedResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/ai_optimization/gemini/llm_scraper/task_get/advanced/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1150,13 +1150,13 @@ export class AiOptimizationApi {
     }
     geminiLlmScraperTaskGetHtml(id: string): Promise<AiOptimizationGeminiLlmScraperTaskGetHtmlResponseInfo | null> {
         let url_ = this.baseUrl + "/v3/ai_optimization/gemini/llm_scraper/task_get/html/{id}";
-        url_ = url_.replace(/[?&]$/, "");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        url_ = url_.replace(/[?&]$/, "");
         let options_: RequestInit = {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1192,7 +1192,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1227,7 +1227,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1259,7 +1259,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1292,7 +1292,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1328,7 +1328,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1360,7 +1360,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1393,7 +1393,7 @@ export class AiOptimizationApi {
             method: "GET",
             headers: {
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
 
@@ -1429,7 +1429,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1464,7 +1464,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1499,7 +1499,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1534,7 +1534,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1569,7 +1569,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1604,7 +1604,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1639,7 +1639,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1674,7 +1674,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1709,7 +1709,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1744,7 +1744,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1779,7 +1779,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1814,7 +1814,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1849,7 +1849,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1884,7 +1884,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -1919,7 +1919,7 @@ export class AiOptimizationApi {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "User-Agent": "typescript-client/2.1.11",
+                "User-Agent": "typescript-client/2.1.13",
             }
         };
         return this.http.fetch(url_, options_).then((_response: Response) => {

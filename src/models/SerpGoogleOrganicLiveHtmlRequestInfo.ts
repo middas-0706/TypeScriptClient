@@ -1,6 +1,3 @@
-import { SerpApiStopCrawlOnMatchInfo, ISerpApiStopCrawlOnMatchInfo } from "./SerpApiStopCrawlOnMatchInfo";
-
-
 export interface ISerpGoogleOrganicLiveHtmlRequestInfo   {
         
         /** *keyword* **required field** you can specify **up to 700 characters** in the `keyword` field all %## will be decoded (plus character '+' will be decoded to a space character) if you need to use the '%' character for your `keyword`, please specify it as '%25'; if you need to use the “+” character for your `keyword`, please specify it as “%2B”; if this field contains such parameters as *'allinanchor:', 'allintext:', 'allintitle:', 'allinurl:', ‘cache:’, 'define:', 'filetype:', 'id:', 'inanchor:', 'info:', 'intext:', 'intitle:', 'inurl:', 'link:', 'related:', 'site:'*, **the charge per task will be multiplied by 5** */
@@ -33,15 +30,6 @@ export interface ISerpGoogleOrganicLiveHtmlRequestInfo   {
         /** *user-defined task identifier* optional field *the character limit is 255* you can use this parameter to identify the task and match it with the result you will find the specified `tag` value in the `data` object of the response */
         tag?: string | undefined
         
-        /** array of targets to stop crawling optional field if specified, the response will contain SERP results up to and including the specified match_value; you can specify up to 10 target values in this array example: 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}] learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api Your account will be billed per each SERP crawled through the specified targets */
-        stop_crawl_on_match?: SerpApiStopCrawlOnMatchInfo[] | undefined
-        
-        /** *target match type* **required field if `stop_crawl_on_match` is specified** type of match for the `match_value` possible values: `domain` – specific domain or subdomain `with_subdomains` – main domain and subdomains `wildcard` –  wildcard pattern */
-        match_type?: string | undefined
-        
-        /** *target domain, subdomain, or wildcard value* **required field if `stop_crawl_on_match` is specified** specify a target domain, subdomain, or wildcard value; **Note:** domain or subdomain must be specified without a request protocol; example: `'match_value': 'dataforseo.com'`, `'match_value': '/blog/post-*'` */
-        match_value?: string | undefined
-        
         /** *page crawl limit* optional field number of search results pages to crawl max value: `100` **Note:** you will be charged for each page crawled (10 organic results per page); learn more about pricing on our [Pricing](https://dataforseo.com/pricing/serp/google-organic-serp-api) page; **Note#2:** the `max_crawl_pages` and `depth` parameters complement each other; learn more at [our help center](https://dataforseo.com/help-center/what-is-max-crawl-pages-and-how-does-it-work) */
         max_crawl_pages?: number | undefined
         
@@ -59,15 +47,6 @@ export interface ISerpGoogleOrganicLiveHtmlRequestInfo   {
         
         /** *search engine domain* optional field we choose the relevant search engine domain automatically according to the location and language you specify however, you can set a custom search engine domain in this field example: `google.co.uk`, `google.com.au`, `google.de`, etc. */
         se_domain?: string | undefined
-        
-        /** *target matching mode* optional field to enable this parameter, `stop_crawl_on_match` must also be enabled defines how the crawl should stop when multiple targets are specified in `stop_crawl_on_match` possible values: `all`, `any` `all` – the crawl stops only when all specified targets are found `any` – the crawl stops when any single target is found default value: `any` learn more about this parameter on our [Help Center](https://dataforseo.com/help-center/how-to-use-new-crawl-control-parameters-in-google-organic-serp-api) */
-        target_search_mode?: string | undefined
-        
-        /** *SERP element types to check for targets* optional field to enable this parameter, `stop_crawl_on_match` must also be enabled specifies which SERP element types should be checked for target matches if not specified, all first-level elements with `url` and `domain` fields are checked for targets possible values: `organic`, `paid`, `local_pack`, `featured_snippet`, `events`, `google_flights`, `images`, `jobs`, `knowledge_graph`, `local_service`, `map`, `scholarly_articles`, `third_party_reviews`, `twitter` **Note:** cannot contain the same element types as `ignore_targets_in` example: `'find_targets_in': ['organic', 'featured_snippet']` learn more about this parameter on our [Help Center](https://dataforseo.com/help-center/how-to-use-new-crawl-control-parameters-in-google-organic-serp-api) */
-        find_targets_in?: string[] | undefined
-        
-        /** *SERP element types to exclude from target search* optional field to enable this parameter, `stop_crawl_on_match` must also be enabled specifies which SERP element types should be excluded when searching for target matches possible values: `organic`, `paid`, `local_pack`, `featured_snippet`, `events`, `google_flights`, `images`, `jobs`, `knowledge_graph`, `local_service`, `map`, `scholarly_articles`, `third_party_reviews`, `twitter` **Note:** cannot contain the same element types as `find_targets_in` example: `'ignore_targets_in': ['paid', 'images']` learn more about this parameter on our [Help Center](https://dataforseo.com/help-center/how-to-use-new-crawl-control-parameters-in-google-organic-serp-api) */
-        ignore_targets_in?: string[] | undefined
 
     [key: string]: any;
 
@@ -126,21 +105,6 @@ export class SerpGoogleOrganicLiveHtmlRequestInfo  implements ISerpGoogleOrganic
     tag?: string | undefined;
 
     
-    /** array of targets to stop crawling optional field if specified, the response will contain SERP results up to and including the specified match_value; you can specify up to 10 target values in this array example: 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}] learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api Your account will be billed per each SERP crawled through the specified targets */
-
-    stop_crawl_on_match?: SerpApiStopCrawlOnMatchInfo[] | undefined;
-
-    
-    /** *target match type* **required field if `stop_crawl_on_match` is specified** type of match for the `match_value` possible values: `domain` – specific domain or subdomain `with_subdomains` – main domain and subdomains `wildcard` –  wildcard pattern */
-
-    match_type?: string | undefined;
-
-    
-    /** *target domain, subdomain, or wildcard value* **required field if `stop_crawl_on_match` is specified** specify a target domain, subdomain, or wildcard value; **Note:** domain or subdomain must be specified without a request protocol; example: `'match_value': 'dataforseo.com'`, `'match_value': '/blog/post-*'` */
-
-    match_value?: string | undefined;
-
-    
     /** *page crawl limit* optional field number of search results pages to crawl max value: `100` **Note:** you will be charged for each page crawled (10 organic results per page); learn more about pricing on our [Pricing](https://dataforseo.com/pricing/serp/google-organic-serp-api) page; **Note#2:** the `max_crawl_pages` and `depth` parameters complement each other; learn more at [our help center](https://dataforseo.com/help-center/what-is-max-crawl-pages-and-how-does-it-work) */
 
     max_crawl_pages?: number | undefined;
@@ -169,21 +133,6 @@ export class SerpGoogleOrganicLiveHtmlRequestInfo  implements ISerpGoogleOrganic
     /** *search engine domain* optional field we choose the relevant search engine domain automatically according to the location and language you specify however, you can set a custom search engine domain in this field example: `google.co.uk`, `google.com.au`, `google.de`, etc. */
 
     se_domain?: string | undefined;
-
-    
-    /** *target matching mode* optional field to enable this parameter, `stop_crawl_on_match` must also be enabled defines how the crawl should stop when multiple targets are specified in `stop_crawl_on_match` possible values: `all`, `any` `all` – the crawl stops only when all specified targets are found `any` – the crawl stops when any single target is found default value: `any` learn more about this parameter on our [Help Center](https://dataforseo.com/help-center/how-to-use-new-crawl-control-parameters-in-google-organic-serp-api) */
-
-    target_search_mode?: string | undefined;
-
-    
-    /** *SERP element types to check for targets* optional field to enable this parameter, `stop_crawl_on_match` must also be enabled specifies which SERP element types should be checked for target matches if not specified, all first-level elements with `url` and `domain` fields are checked for targets possible values: `organic`, `paid`, `local_pack`, `featured_snippet`, `events`, `google_flights`, `images`, `jobs`, `knowledge_graph`, `local_service`, `map`, `scholarly_articles`, `third_party_reviews`, `twitter` **Note:** cannot contain the same element types as `ignore_targets_in` example: `'find_targets_in': ['organic', 'featured_snippet']` learn more about this parameter on our [Help Center](https://dataforseo.com/help-center/how-to-use-new-crawl-control-parameters-in-google-organic-serp-api) */
-
-    find_targets_in?: string[] | undefined;
-
-    
-    /** *SERP element types to exclude from target search* optional field to enable this parameter, `stop_crawl_on_match` must also be enabled specifies which SERP element types should be excluded when searching for target matches possible values: `organic`, `paid`, `local_pack`, `featured_snippet`, `events`, `google_flights`, `images`, `jobs`, `knowledge_graph`, `local_service`, `map`, `scholarly_articles`, `third_party_reviews`, `twitter` **Note:** cannot contain the same element types as `find_targets_in` example: `'ignore_targets_in': ['paid', 'images']` learn more about this parameter on our [Help Center](https://dataforseo.com/help-center/how-to-use-new-crawl-control-parameters-in-google-organic-serp-api) */
-
-    ignore_targets_in?: string[] | undefined;
 
     [key: string]: any;
 
@@ -215,23 +164,12 @@ export class SerpGoogleOrganicLiveHtmlRequestInfo  implements ISerpGoogleOrganic
             this.language_name = data["language_name"];
             this.os = data["os"];
             this.tag = data["tag"];
-            if (Array.isArray(data["stop_crawl_on_match"])) {
-                this.stop_crawl_on_match = [];
-                for (let item of data["stop_crawl_on_match"]) {
-                    this.stop_crawl_on_match.push(SerpApiStopCrawlOnMatchInfo.fromJS(item));
-                }
-            }
-            this.match_type = data["match_type"];
-            this.match_value = data["match_value"];
             this.max_crawl_pages = data["max_crawl_pages"];
             this.search_param = data["search_param"];
             this.expand_ai_overview = data["expand_ai_overview"];
             this.url = data["url"];
             this.location_coordinate = data["location_coordinate"];
             this.se_domain = data["se_domain"];
-            this.target_search_mode = data["target_search_mode"];
-            this.find_targets_in = data["find_targets_in"];
-            this.ignore_targets_in = data["ignore_targets_in"];
         }
     }
 
@@ -259,26 +197,12 @@ export class SerpGoogleOrganicLiveHtmlRequestInfo  implements ISerpGoogleOrganic
         data["language_name"] = this.language_name;
         data["os"] = this.os;
         data["tag"] = this.tag;
-        data["stop_crawl_on_match"] = null;
-        if (Array.isArray(this.stop_crawl_on_match)) {
-            data["stop_crawl_on_match"] = [];
-            for (let item of this.stop_crawl_on_match) {
-                if (item && typeof item.toJSON === "function") {
-                    data["stop_crawl_on_match"].push(item?.toJSON());
-                }
-            }
-        }
-        data["match_type"] = this.match_type;
-        data["match_value"] = this.match_value;
         data["max_crawl_pages"] = this.max_crawl_pages;
         data["search_param"] = this.search_param;
         data["expand_ai_overview"] = this.expand_ai_overview;
         data["url"] = this.url;
         data["location_coordinate"] = this.location_coordinate;
         data["se_domain"] = this.se_domain;
-        data["target_search_mode"] = this.target_search_mode;
-        data["find_targets_in"] = this.find_targets_in;
-        data["ignore_targets_in"] = this.ignore_targets_in;
         return data;
     }
 }

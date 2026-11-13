@@ -28,7 +28,7 @@ export interface IAiOptimizationPerplexityLlmResponsesLiveResultInfo   {
         items?: MessageAiOptimizationLlmResponseElementItem[] | undefined
         
         /** *array of fan-out queries* contains related search queries derived from the main query to provide a more comprehensive response */
-        fan_out_queries?: string[] | undefined
+        fan_out_queries?: any | undefined
         
         /** *array of search results* contains objects with search results relevant to the user query and model's response */
         search_results?: SearchResults[] | undefined
@@ -79,7 +79,7 @@ export class AiOptimizationPerplexityLlmResponsesLiveResultInfo  implements IAiO
     
     /** *array of fan-out queries* contains related search queries derived from the main query to provide a more comprehensive response */
 
-    fan_out_queries?: string[] | undefined;
+    fan_out_queries?: any | undefined;
 
     
     /** *array of search results* contains objects with search results relevant to the user query and model's response */
